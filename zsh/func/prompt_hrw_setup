@@ -24,6 +24,7 @@ coloratom() {
 	fi
 	echo $(( $off + $colorcode[${(L)atom}] ))
 }
+
 colorword() {
 	local fg=$1 bg=$2 att=$3
 	local -a s
@@ -40,6 +41,51 @@ colorword() {
 
 	echo "%{"$'\e['${(j:;:)s}m"%}"
 }
+
+function git_time_since_commit() {
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+      # Only proceed if there is actually a commit.
+      if [[ $(git log 2>&1 > /dev/null | grep -c "^fatal: bad default revision") == 0 ]]; then
+          # Get the last commit.
+          last_commit=`git log --pretty=format:'%at' -1 2> /dev/null`
+          now=`date +%s`
+          seconds_since_last_commit=$((now-last_commit))
+
+          # Totals
+          MINUTES=$((seconds_since_last_commit / 60))
+          HOURS=$((seconds_since_last_commit/3600))
+         
+          # Sub-hours and sub-minutes
+          DAYS=$((seconds_since_last_commit / 86400))
+          SUB_HOURS=$((HOURS % 24))
+          SUB_MINUTES=$((MINUTES % 60))
+          
+          if [[ -n $(git status -s 2> /dev/null) ]]; then
+              if [ "$MINUTES" -gt 30 ]; then
+                  COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG"
+              elif [ "$MINUTES" -gt 1 ]; then
+                  COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_MEDIUM"
+              else
+                  COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT"
+              fi
+          else
+              COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL"
+          fi
+
+          if [ "$HOURS" -gt 24 ]; then
+              echo "$COLOR${DAYS}d${SUB_HOURS}h${SUB_MINUTES}m%{$reset_color%}|"
+          elif [ "$MINUTES" -gt 60 ]; then
+              echo "$COLOR${HOURS}h${SUB_MINUTES}m%{$reset_color%}|"
+          else
+              echo "$COLOR${MINUTES}m%{$reset_color%}|"
+          fi
+      else
+          COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL"
+          echo "$COLOR~|"
+      fi
+  fi
+}
+
 
 function minutes_since_last_commit {
     now=`date +%s`
@@ -58,28 +104,28 @@ function prompt_hrw_scm_time_since_commit() {
 	pc=(${(kv)wunjo_prompt_colors})
 
 	if zgit_inworktree; then
-        local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
-        if [ "$MINUTES_SINCE_LAST_COMMIT" -eq -1 ]; then
-          COLOR="$pc[scm_time_uncommitted]"
-          local SINCE_LAST_COMMIT="${COLOR}uncommitted$pc[reset]"  
-        else
-          if [ "$MINUTES_SINCE_LAST_COMMIT" -gt 30 ]; then
-            COLOR="$pc[scm_time_long]"
-          elif [ "$MINUTES_SINCE_LAST_COMMIT" -gt 10 ]; then
-            COLOR="$pc[scm_time_medium]"
-          else
-            COLOR="$pc[scm_time_short]"
-          fi
-          local SINCE_LAST_COMMIT="${COLOR}$(minutes_since_last_commit)m$pc[reset]"
-        fi
-        echo $SINCE_LAST_COMMIT
+    local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
+    if [ "$MINUTES_SINCE_LAST_COMMIT" -eq -1 ]; then
+      COLOR="$pc[scm_time_uncommitted]"
+      local SINCE_LAST_COMMIT="${COLOR}uncommitted$pc[reset]"  
+    else
+      if [ "$MINUTES_SINCE_LAST_COMMIT" -gt 30 ]; then
+        COLOR="$pc[scm_time_long]"
+      elif [ "$MINUTES_SINCE_LAST_COMMIT" -gt 10 ]; then
+        COLOR="$pc[scm_time_medium]"
+      else
+        COLOR="$pc[scm_time_short]"
+      fi
+      local SINCE_LAST_COMMIT="${COLOR}$(minutes_since_last_commit)m$pc[reset]"
     fi
+    echo $SINCE_LAST_COMMIT
+  fi
 }
 
 function prompt_hrw_scm_info() {
-    if zgit_inworktree; then
-        echo "($(prompt_wunjo_scm_branch))"
-    fi
+  if zgit_inworktree; then
+    echo "($(prompt_wunjo_scm_branch))"
+  fi
 }
 
 prompt_hrw_setup() {
@@ -162,11 +208,15 @@ prompt_hrw_setup() {
 	p_line="$pc[line]%y$pc[reset]"
 
 	PROMPT=
-	# if [ $verbose ]; then
-	#    PROMPT+="$pc[host]%m$pc[reset]:"
-	#  fi
+	
+#   PROMPT+="$pc[path]%(2~.%~.%/)$pc[reset]"
+#   PROMPT+="\$(prompt_wunjo_scm_status) $(prompt_hrw_scm_time_since_commit)"
+#   PROMPT+="%(?.. $pc[rc]exited %1v$pc[reset])"
+#   PROMPT+="
+# "
+
 	PROMPT+="$pc[shortpath]%~$pc[reset]"
-	PROMPT+="($(prompt_hrw_scm_time_since_commit)|$pc[scm_branch]\$(prompt_wunjo_scm_branch)$pc[reset])"
+	PROMPT+="($pc[scm_branch]\$(prompt_wunjo_scm_branch)$pc[reset])"
   PROMPT+=" $pc[#]\$$pc[reset] "
 
 	export PROMPT
