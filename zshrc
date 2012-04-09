@@ -45,7 +45,7 @@ export HISTSIZE=200
 # look for ey config in project dirs
 export EYRC=./.eyrc
 
-# Load the prompt theme system
+# load custom prompt
 setopt promptsubst
 autoload -U promptinit
 promptinit

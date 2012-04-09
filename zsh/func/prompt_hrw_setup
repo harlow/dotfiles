@@ -166,7 +166,7 @@ prompt_hrw_setup() {
 	#    PROMPT+="$pc[host]%m$pc[reset]:"
 	#  fi
 	PROMPT+="$pc[shortpath]%~$pc[reset]"
-	PROMPT+="($pc[scm_branch]\$(prompt_wunjo_scm_branch)$pc[reset])"
+	PROMPT+="($(prompt_hrw_scm_time_since_commit)|$pc[scm_branch]\$(prompt_wunjo_scm_branch)$pc[reset])"
   PROMPT+=" $pc[#]\$$pc[reset] "
 
 	export PROMPT
