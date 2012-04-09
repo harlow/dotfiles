@@ -165,7 +165,7 @@ zgit_isindexclean() {
 
 zgit_isworktreeclean() {
 	zgit_isgit || return 1
-	if [ -z "$(git ls-files $zgit_info[dir]:h --modified)" ]; then
+	if git diff --quiet 2>/dev/null; then
 		return 0
 	else
 		return 1
@@ -202,7 +202,9 @@ zgit_svnhead() {
 		commit='HEAD'
 	fi
 
-	git svn find-rev $commit
+	git show --raw $commit | \
+		grep git-svn-id | \
+			sed -re 's/^\s*git-svn-id: .*@([0-9]+).*$/\1/'
 }
 
 zgit_rebaseinfo() {
@@ -220,11 +222,7 @@ zgit_rebaseinfo() {
 	zgit_info[dotest]=$dotest
 
 	zgit_info[rb_onto]=$(cat "$dotest/onto")
-	if [ -f "$dotest/upstream" ]; then
-		zgit_info[rb_upstream]=$(cat "$dotest/upstream")
-	else
-		zgit_info[rb_upstream]=
-	fi
+	zgit_info[rb_upstream]=$(cat "$dotest/upstream")
 	if [ -f "$dotest/orig-head" ]; then
 		zgit_info[rb_head]=$(cat "$dotest/orig-head")
 	elif [ -f "$dotest/head" ]; then
@@ -235,10 +233,16 @@ zgit_rebaseinfo() {
 	return 0
 }
 
-add-zsh-hook chpwd zgit_chpwd_hook
-add-zsh-hook preexec zgit_preexec_hook
-add-zsh-hook precmd zgit_precmd_hook
+zgitinit() {
+	typeset -ga chpwd_functions
+	typeset -ga preexec_functions
+	typeset -ga precmd_functions
+	chpwd_functions+='zgit_chpwd_hook'
+	preexec_functions+='zgit_preexec_hook'
+	precmd_functions+='zgit_precmd_hook'
+}
 
+zgitinit
 zgit_info_update
 
 # vim:set ft=zsh:
