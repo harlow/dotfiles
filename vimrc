@@ -1,3 +1,4 @@
+" Settings
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -13,13 +14,7 @@ set incsearch
 
 " Pathogen
 call pathogen#infect()
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-
+syntax on
 filetype plugin indent on
 
 augroup vimrcEx
