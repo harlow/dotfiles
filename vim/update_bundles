@@ -27,6 +27,7 @@ git_bundles = [
   "git://github.com/tsaleh/vim-tmux.git",
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/vim-scripts/Gist.vim.git",
+  "git://git.wincent.com/command-t.git"
 ]
 
 vim_org_scripts = [
