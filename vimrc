@@ -68,11 +68,6 @@ nmap <C-K> <C-W><C-K>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE NAVIGATION SHORTCUTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails map <Leader>c :RTcontroller
-autocmd User Rails map <Leader>f :RTfunctionaltest 
-autocmd User Rails map <Leader>h :RThelper
-autocmd User Rails map <Leader>v :RTview
-autocmd User Rails map <Leader>m :RTmodel
 autocmd User Rails map <Leader>r :RTconfig routes<ENTER>
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
 autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
