@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/training/Development/harlow/app/views/dashboard'
+let g:netrw_dirhist_2='/Users/training/Development/clearance_cucumber/app/views'
+let g:netrw_dirhist_3='/Users/training/Development/clearance_cucumber/app/views/layouts'
+let g:netrw_dirhist_4='/Users/training/Sites/catalog.hward.com'
