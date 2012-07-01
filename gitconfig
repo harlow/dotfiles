@@ -24,3 +24,5 @@
   graft = !legit graft \"$@\"
 [core]
   editor = mvim -f
+[credential]
+  helper = osxkeychain
