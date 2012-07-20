@@ -32,6 +32,7 @@ alias giv="gem install -v"
 
 # Rails
 alias migrate="bundle exec rake db:migrate db:test:prepare"
+alias seed="bundle exec rake db:seed"
 alias remigrate="bundle exec rake db:migrate db:migrate:redo db:schema:dump db:test:prepare"
 alias remongrate="bundle exec rake mongoid:migrate mongoid:migrate:redo"
 

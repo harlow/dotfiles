@@ -1,11 +1,16 @@
 # new path
 export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:~/Sites/elasticbeanstalk-cli/bin
 
 # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin 
+PATH=$PATH:$HOME/.rvm/bin
+if [[ -s /Users/training/.rvm/scripts/rvm ]] ; then
+  source /Users/training/.rvm/scripts/rvm ;
+fi
 
-if [[ -s /Users/training/.rvm/scripts/rvm ]] ; then 
-  source /Users/training/.rvm/scripts/rvm ; 
+# aliases
+if [ -e "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
 fi
 
 # load completion and func paths
@@ -24,11 +29,6 @@ setopt auto_cd
 # use vim as an editor
 export EDITOR=mvim
 
-# aliases
-if [ -e "$HOME/.aliases" ]; then
-  source "$HOME/.aliases"
-fi
-
 # vi mode
 bindkey -v
 bindkey "^F" vi-cmd-mode
@@ -45,11 +45,8 @@ export HISTSIZE=200
 # look for ey config in project dirs
 export EYRC=./.eyrc
 
-# load custom prompt
+# load customized prompt
 setopt promptsubst
 autoload -U promptinit
 promptinit
 prompt hrw
-
-autoload -U compinit
-compinit

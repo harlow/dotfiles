@@ -13,7 +13,7 @@
   br = branch
   wu = log --stat origin..@{0}
   plre = pull --rebase
-  lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -10
+  lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
   switch = !legit switch \"$@\"
   branches = !legit branches
   sprout = !legit sprout \"$@\"
@@ -23,6 +23,6 @@
   publish = !legit publish \"$@\"
   graft = !legit graft \"$@\"
 [core]
-  editor = mvim -f
+  editor = vim -f
 [credential]
   helper = osxkeychain
