@@ -10,11 +10,12 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=" "
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM MOU
+" AUTO TAGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:mou_dir = "$HOME/Apps/Mou.app"
+if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
+  source ~/.dotfiles/vim/autotag.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR SCHEME
@@ -48,7 +49,7 @@ set colorcolumn=81
 set relativenumber
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" DISPLAY SETTINGS AND MISC
+" DISPLAY SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
@@ -60,7 +61,7 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 
-" Tab completion options
+" Tab completion options for files
 set wildmode=list:longest,list:full
 set complete=.,w,t
 
@@ -70,7 +71,9 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Window navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" WINDOW NAVIGATION
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 
@@ -95,21 +98,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
