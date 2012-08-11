@@ -11,36 +11,16 @@ filetype plugin indent on
 let mapleader=" "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIMUX SHORTCUTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Prompt for a command to run
-map rp :PromptVimTmuxCommand
-
-" Run last command executed by RunVimTmuxCommand
-map rl :RunLastVimTmuxCommand
-
-" Inspect runner pane
-map ri :InspectVimTmuxRunner
-
-" Close all other tmux panes in current window
-map rx :CloseVimTmuxPanes
-
-" Interrupt any command running in the runner pane
-map rs :InterruptVimTmuxRunner
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" AUTO TAGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
-  source ~/.dotfiles/vim/autotag.vim
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR SCHEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 set background=dark
 colorscheme solarized
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CUSTOM MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  EDITOR SETTINGS
@@ -62,9 +42,10 @@ set shiftwidth=2
 set expandtab
 set number
 set numberwidth=5
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo\ 16
 set colorcolumn=81
 set relativenumber
+set vb
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DISPLAY SETTINGS
@@ -94,6 +75,13 @@ let g:html_indent_tags = 'li\|p'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AUTO TAGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
+  source ~/.dotfiles/vim/autotag.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE NAVIGATION SHORTCUTS

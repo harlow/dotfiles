@@ -53,4 +53,5 @@ setopt promptsubst
 autoload -U promptinit
 promptinit
 prompt hrw
+
 ctags=/usr/local/bin/ctags

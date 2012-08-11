@@ -12,6 +12,9 @@ alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 
+# tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
 # git
 alias g="git"
 alias gci="git pull --rebase && rake && git push"
