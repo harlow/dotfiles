@@ -28,7 +28,7 @@ vim_org_scripts = [
   ["jquery",        "12107", "syntax"],
 ]
 
-bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+bundles_dir = File.join(File.dirname(__FILE__), "vim", "bundle")
 
 FileUtils.cd(bundles_dir)
 
