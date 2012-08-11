@@ -18,6 +18,7 @@ alias gci="git pull --rebase && rake && git push"
 
 # Ruby
 alias help-strftime='ruby ~/bin/help-strftime.rb'
+alias tags="ctags --exclude='*.js' -f /Users/harlow/Sites/gokamea/tmp/tags -R --langmap='ruby:+.rake.builder.rjs' --languages=-javascript /Users/harlow/Sites/gokamea"
 
 # Bundler
 alias b="bundle"
