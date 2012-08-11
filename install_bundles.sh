@@ -19,7 +19,8 @@ git_bundles = [
   "git://github.com/tsaleh/vim-matchit.git",
   "git://github.com/tsaleh/vim-shoulda.git",
   "git://github.com/vim-ruby/vim-ruby.git",
-  "git://github.com/ervandew/supertab.git"
+  "git://github.com/ervandew/supertab.git",
+  "git://github.com/benmills/vimux.git"
 ]
 
 vim_org_scripts = [
