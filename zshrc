@@ -7,6 +7,10 @@ if [[ -s /Users/harlow/.rvm/scripts/rvm ]] ; then
   source /Users/harlow/.rvm/scripts/rvm ;
 fi
 
+if [[ -s /Users/training/.rvm/scripts/rvm ]] ; then
+  source /Users/training/.rvm/scripts/rvm ;
+fi
+
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
