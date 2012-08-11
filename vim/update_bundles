@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+require 'fileutils'
+require 'open-uri'
 
 git_bundles = [ 
   "git://github.com/altercation/vim-colors-solarized.git",
@@ -18,8 +20,7 @@ git_bundles = [
   "git://github.com/tsaleh/vim-matchit.git",
   "git://github.com/tsaleh/vim-shoulda.git",
   "git://github.com/tsaleh/vim-tcomment.git",
-  "git://github.com/vim-ruby/vim-ruby.git",
-  "git://github.com/vim-scripts/vim-mou.git"
+  "git://github.com/vim-ruby/vim-ruby.git"
 ]
 
 vim_org_scripts = [
@@ -27,14 +28,11 @@ vim_org_scripts = [
   ["jquery",        "12107", "syntax"],
 ]
 
-require 'fileutils'
-require 'open-uri'
-
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
 FileUtils.cd(bundles_dir)
 
-puts "trashing everything (lookout!)"
+puts "Trashing everything (lookout!)"
 Dir["*"].each {|d| FileUtils.rm_rf d }
 
 git_bundles.each do |url|

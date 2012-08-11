@@ -1,11 +1,10 @@
 # new path
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:~/Sites/elasticbeanstalk-cli/bin
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
-if [[ -s /Users/training/.rvm/scripts/rvm ]] ; then
-  source /Users/training/.rvm/scripts/rvm ;
+if [[ -s /Users/harlow/.rvm/scripts/rvm ]] ; then
+  source /Users/harlow/.rvm/scripts/rvm ;
 fi
 
 # aliases
