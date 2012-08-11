@@ -16,11 +16,10 @@ git_bundles = [
   "git://github.com/tpope/vim-rails.git",
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/tpope/vim-vividchalk.git",
-  "git://github.com/tsaleh/taskpaper.vim.git",
   "git://github.com/tsaleh/vim-matchit.git",
   "git://github.com/tsaleh/vim-shoulda.git",
-  "git://github.com/tsaleh/vim-tcomment.git",
-  "git://github.com/vim-ruby/vim-ruby.git"
+  "git://github.com/vim-ruby/vim-ruby.git",
+  "git://github.com/ervandew/supertab.git"
 ]
 
 vim_org_scripts = [
