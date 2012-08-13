@@ -8,7 +8,7 @@ for name in *; do
     if [ ! -L "$target" ]; then
       cutline=`grep -n -m1 "$cutstring" "$target" | sed "s/:.*//"`
       if [ -n "$cutline" ]; then
-	cutline=$((cutline-1))
+        cutline=$((cutline-1))
         echo "Updating $target"
         head -n $cutline "$target" > update_tmp
         startline=`sed '1!G;h;$!d' "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
@@ -23,12 +23,18 @@ for name in *; do
       fi
     fi
   else
-    if [ "$name" != 'install.sh' && "$name" != 'install_bundles.sh' && "$name" != 'README.md' ]; then
-      echo "Creating $target"
-      if [ -n "$(grep "$cutstring" "$name")" ]; then
-        cp "$PWD/$name" "$target"
-      else
-        ln -s "$PWD/$name" "$target"
+    if [ "$name" != 'install.sh' ]; then
+      if [ "$name" != 'install_bundles.sh' ]; then
+       if [ "$name" != 'README.md' ]; then
+         if [ "$name" != 'iterm2' ]; then
+           echo "Creating $target"
+           if [ -n "$(grep "$cutstring" "$name")" ]; then
+             cp "$PWD/$name" "$target"
+           else
+             ln -s "$PWD/$name" "$target"
+           fi
+         fi
+        fi
       fi
     fi
   fi
