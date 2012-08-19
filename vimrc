@@ -18,11 +18,6 @@ set background=dark
 colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CUSTOM MAPPINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  EDITOR SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible  " Use Vim settings, rather then Vi settings
@@ -71,8 +66,25 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 let g:html_indent_tags = 'li\|p'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" WINDOW NAVIGATION
+" OMNI COMPLETION OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+:set completeopt=longest,menuone
+:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CUSTOM MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File Navigation
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map gf :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Window navigation
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 
@@ -86,9 +98,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE NAVIGATION SHORTCUTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails map <Leader>r :RTconfig routes<ENTER>
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
