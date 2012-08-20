@@ -14,6 +14,7 @@
   wu = log --stat origin..@{0}
   plre = pull --rebase
   lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
+  lgl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -50
   switch = !legit switch \"$@\"
   branches = !legit branches
   sprout = !legit sprout \"$@\"
