@@ -60,12 +60,26 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Go do file
-map gt :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" Go to file in new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Window navigation
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-n>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OMNI COMPLETION OPTIONS
@@ -87,7 +101,7 @@ if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FILE NAVIGATION SHORTCUTS
+" RVIM ADDITIONAL SHORTCUTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
 autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()

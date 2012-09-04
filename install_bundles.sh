@@ -21,7 +21,7 @@ git_bundles = [
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/ervandew/supertab.git",
   "git://github.com/scrooloose/nerdtree.git",
-  "git://github.com/vim-scripts/AutoComplPop.git"
+  "git://github.com/vim-scripts/AutoComplPop.git",
 ]
 
 # "git://github.com/benmills/vimux.git"
