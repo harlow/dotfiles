@@ -4,7 +4,6 @@
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SET LEADER KEY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,7 +14,7 @@ let mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme vividchalk
 set list listchars=tab:»·,trail:·
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
@@ -47,7 +46,10 @@ set vb
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Snippets are activated by Shift+Tab
+" Set shell for rvm
+set shell=/bin/sh
+
+"Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion options for files

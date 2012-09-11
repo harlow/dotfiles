@@ -8,10 +8,10 @@ git_bundles = [
   "git://github.com/kchmck/vim-coffee-script.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/pangloss/vim-javascript.git",
+  "git://github.com/tpope/vim-bundler.git",
   "git://github.com/tpope/vim-cucumber.git",
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
-  "git://github.com/tpope/vim-haml.git",
   "git://github.com/tpope/vim-markdown.git",
   "git://github.com/tpope/vim-rails.git",
   "git://github.com/tpope/vim-surround.git",
@@ -24,8 +24,6 @@ git_bundles = [
   "git://github.com/vim-scripts/AutoComplPop.git",
   "git://github.com/mileszs/ack.vim.git"
 ]
-
-# "git://github.com/benmills/vimux.git"
 
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
