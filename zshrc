@@ -1,5 +1,5 @@
 # new path
-export PATH=/usr/local/bin:$PATH
+export PATH="./bin/stubs:/usr/local/bin:$PATH"
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
