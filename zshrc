@@ -1,14 +1,11 @@
 # new path
-export PATH="./bin/stubs:/usr/local/bin:$PATH"
+export PATH="./bin:/usr/local/bin:$PATH"
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
+
 if [[ -s /Users/harlow/.rvm/scripts/rvm ]] ; then
   source /Users/harlow/.rvm/scripts/rvm ;
-fi
-
-if [[ -s /Users/training/.rvm/scripts/rvm ]] ; then
-  source /Users/training/.rvm/scripts/rvm ;
 fi
 
 # aliases
