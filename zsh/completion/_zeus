@@ -1,0 +1,2 @@
+#compdef zeus
+compadd -P spec/ -S _spec.rb `ls spec/**/*_spec.rb | sed -E "s/spec\/|_spec\.rb//g"`

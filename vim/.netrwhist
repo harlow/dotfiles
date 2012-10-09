@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/training/.dotfiles'
 let g:netrw_dirhist_2='/Users/harlow/.dotfiles'
 let g:netrw_dirhist_3='/Users/harlow/Sites/apprentice-io/app/models'
+let g:netrw_dirhist_4='/Users/harlow/.dotfiles/zsh/completion'
