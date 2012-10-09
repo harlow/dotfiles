@@ -77,7 +77,7 @@ nmap <C-L> <C-W><C-L>
 " RUN RSPEC TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RSpec(args)
-  execute ":silent !run_command 'zeus rspec -fd" . a:args . " %'"
+  execute ":silent !run_command 'zeus rspec -fd " . a:args . " %'"
 endfunction
 
 nmap <Leader>l :call RSpec('-l ' . <C-r>=line('.')<CR>)<CR>
@@ -102,7 +102,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible()  ? "\<C-y>"  : "\<C-g>u\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? "<C-n>"  : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? "<C-n>"  : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
