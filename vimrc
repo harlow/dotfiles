@@ -4,6 +4,7 @@
 call pathogen#infect()
 syntax on
 filetype plugin indent on
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SET LEADER KEY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,6 +70,18 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " Window navigation
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUN RSPEC TESTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RSpec(args)
+  execute ":silent !run-in-terminal 'zeus rspec -fd" . a:args . " %'"
+endfunction
+
+nmap <Leader>l :call RSpec('-l ' . <C-r>=line('.')<CR>)<CR>
+nmap <Leader>t :call RSpec('')<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -101,9 +114,8 @@ if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RVIM ADDITIONAL SHORTCUTS
+" RAILS.VIM ADDITIONAL SHORTCUTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
 autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,6 +145,7 @@ function! RenameFile()
         redraw!
     endif
 endfunction
+
 map <leader>n :call RenameFile()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,12 +154,8 @@ map <leader>n :call RenameFile()<cr>
 augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |

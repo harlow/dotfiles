@@ -2,14 +2,16 @@
 require 'fileutils'
 require 'open-uri'
 
+# "git://github.com/altercation/vim-colors-solarized.git",
+# "git://github.com/tpope/vim-cucumber.git",
+# "git://github.com/vim-scripts/AutoComplPop.git",
+
 git_bundles = [ 
-  "git://github.com/altercation/vim-colors-solarized.git",
   "git://github.com/godlygeek/tabular.git",
   "git://github.com/kchmck/vim-coffee-script.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/pangloss/vim-javascript.git",
   "git://github.com/tpope/vim-bundler.git",
-  "git://github.com/tpope/vim-cucumber.git",
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/tpope/vim-markdown.git",
@@ -21,7 +23,6 @@ git_bundles = [
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/ervandew/supertab.git",
   "git://github.com/scrooloose/nerdtree.git",
-  "git://github.com/vim-scripts/AutoComplPop.git",
   "git://github.com/mileszs/ack.vim.git"
 ]
 
