@@ -13,6 +13,9 @@ alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 
+# zeus
+alias z="zeus rspec"
+
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
 
