@@ -5,7 +5,7 @@ Clone dotfiles repository:
 
     $ git clone git@github.com:harlow/dotfiles.git
     $ cd dotfiles
-    $ ./install.sh
+    $ ./install_symlinks.sh
 
 This will create symlinks for all config files in your home directory. You can
 safely run this file multiple times to update.

@@ -23,15 +23,17 @@ for name in *; do
       fi
     fi
   else
-    if [ "$name" != 'install.sh' ]; then
+    if [ "$name" != 'install_symlinks.sh' ]; then
       if [ "$name" != 'install_bundles.sh' ]; then
        if [ "$name" != 'README.md' ]; then
          if [ "$name" != 'iterm2' ]; then
-           echo "Creating $target"
-           if [ -n "$(grep "$cutstring" "$name")" ]; then
-             cp "$PWD/$name" "$target"
-           else
-             ln -s "$PWD/$name" "$target"
+           if [ "$name" != 'applescript' ]; then
+             echo "Creating $target"
+             if [ -n "$(grep "$cutstring" "$name")" ]; then
+               cp "$PWD/$name" "$target"
+             else
+               ln -s "$PWD/$name" "$target"
+             fi
            fi
          fi
         fi
