@@ -3,19 +3,16 @@
 on run argv
   tell application "iTerm"
     activate
-    tell application "System Events" to key code 126 using {command down, shift down}
-    tell application "System Events" to keystroke "D" using command down
-    tell application "System Events" to key code 126 using {command down, option down}
     tell application "System Events" to keystroke "t" using command down
-    tell the first terminal
+    tell the current terminal
       tell the current session
         write text "zeus start"
       end tell
     end tell
     tell application "System Events" to key code 123 using command down 
-    tell the first terminal
+    tell the current terminal
       tell the current session
-        write text "mvim -v"
+        write text "mvim ."
       end tell
     end tell
   end tell
