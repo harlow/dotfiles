@@ -76,12 +76,9 @@ nmap <C-L> <C-W><C-L>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUN RSPEC TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RSpec(args)
-  execute ":silent !run_command 'zeus rspec -fd " . a:args . " %'"
-endfunction
-
-nmap <Leader>l :call RSpec('-l ' . <C-r>=line('.')<CR>)<CR>
-nmap <Leader>t :call RSpec('')<CR>
+if filereadable($HOME . "/.dotfiles/vim/rspec.vim")
+  source ~/.dotfiles/vim/rspec.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY

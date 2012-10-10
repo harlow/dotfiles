@@ -2,7 +2,7 @@
 
 on run argv
   tell application "iTerm"
-    activate
+    tell application "System Events" to key code 2 using {command down, option down}
     tell application "System Events" to keystroke "t" using command down
     tell the current terminal
       tell the current session
@@ -16,4 +16,9 @@ on run argv
       end tell
     end tell
   end tell
+
+  tell application "MacVim"
+    tell application "System Events" to key code 1 using {command down, option down}
+    activate
+  end
 end run
