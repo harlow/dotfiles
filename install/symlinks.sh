@@ -27,9 +27,14 @@ Dir.foreach('.') do |item|
   end
 end
 
-unless File.symlink? '/user/local/bin/run_command'
+unless File.symlink? '/usr/local/bin/run_command'
   path = File.expand_path(File.dirname(File.dirname(__FILE__)))
   `ln -s #{path}/misc/run_command /usr/local/bin/run_command`
+end
+
+unless File.symlink? '/usr/local/bin/workspace'
+  path = File.expand_path(File.dirname(File.dirname(__FILE__)))
+  `ln -s #{path}/misc/workspace /usr/local/bin/workspace`
 end
 
 puts "#{symlinks_created.count} symlinks created"
