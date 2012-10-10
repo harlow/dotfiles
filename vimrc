@@ -74,6 +74,16 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RELOAD CURRENT TAB IN CHROME
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! ReloadChrome()
+  wall
+  execute ":silent !reload_chrome"
+endfunction
+
+nmap <Leader>rl :call ReloadChrome()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUN RSPEC TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable($HOME . "/.dotfiles/vim/rspec.vim")

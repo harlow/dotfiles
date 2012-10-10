@@ -29,4 +29,4 @@ endfunction
 
 nmap <Leader>t :call RunCurrentTest()<CR>
 nmap <Leader>l :call RunCurrentLineInTest()<CR>
-nmap <Leader>r :call RunLastCommand()<CR>
+nmap <Leader>rr :call RunLastCommand()<CR>
