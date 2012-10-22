@@ -11,7 +11,7 @@ ignored_files = [
   'bin'
 ]
 
-symlinks_created = []
+symlink_count = 0
 
 Dir.foreach('.') do |item|
   target = "#{ENV['HOME']}/.#{item}"
@@ -25,7 +25,7 @@ Dir.foreach('.') do |item|
     next
   end
 
-  symlinks_created < item
+  symlink_count = symlink_count + 1
   `ln -s #{path}/#{item} #{target}`
 end
 
@@ -36,8 +36,8 @@ Dir.foreach('bin') do |item|
   next if item == '.' or item == '..'
   next if File.symlink? target
 
-  symlinks_created < item
+  symlink_count = symlink_count + 1
   `ln -s #{path}/bin/#{item} #{target}`
 end
 
-puts "#{symlinks_created.count} symlinks created"
+puts "#{symlink_count} symlinks created"
