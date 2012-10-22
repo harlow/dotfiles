@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/training/.dotfiles'
 let g:netrw_dirhist_2='/Users/harlow/.dotfiles'
 let g:netrw_dirhist_3='/Users/harlow/Sites/apprentice-io/app/models'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/harlow/.dotfiles/vim/bundle/snipmate.vim'
 let g:netrw_dirhist_6='/Users/harlow/.dotfiles'
 let g:netrw_dirhist_7='/Users/harlow/Sites/gokamea'
 let g:netrw_dirhist_8='/Users/harlow/Sites/zeus_demo_app'
+let g:netrw_dirhist_9='/Users/harlow/Sites/clearance_test/spec/support/integration'

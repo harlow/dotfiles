@@ -13,6 +13,11 @@ function! RSpec()
   endif
 endfunction
 
+function! RunAllTests()
+  let s:current_test = ''
+  call RSpec()
+endfunction
+
 function! RunCurrentTest()
   let s:current_test = expand('%:p')
   call RSpec()
@@ -27,6 +32,7 @@ function! RunLastCommand()
   call RSpec()
 endfunction
 
+nmap <Leader>a :call RunAllTests()<CR>
 nmap <Leader>t :call RunCurrentTest()<CR>
 nmap <Leader>l :call RunCurrentLineInTest()<CR>
-nmap <Leader>rr :call RunLastCommand()<CR>
+nmap <Leader>r :call RunLastCommand()<CR>
