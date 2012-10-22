@@ -25,5 +25,6 @@
   graft = !legit graft \"$@\"
 [core]
   editor = vim -f
+  excludesfile = /Users/harlow/.gitignore
 [credential]
   helper = osxkeychain
