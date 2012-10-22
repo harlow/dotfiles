@@ -21,3 +21,24 @@ There is configuration for `zsh` so switch your shell from the default `bash`
 to `zsh` on OS X:
 
     $ chsh -s /bin/zsh
+
+Usage
+-------
+
+#### Run Command
+
+Run RSpec Tests and other commands from MacVim
+
+```VimL
+# runs current test under the cursor
+<leader> l
+
+# runs last test
+<leader> r
+
+# runs all tests in current file
+<leader> t
+
+# refreshes open tab in google chrome
+<leader> rl
+```
