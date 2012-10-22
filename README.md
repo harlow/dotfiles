@@ -29,7 +29,7 @@ Usage
 
 Run RSpec Tests and other commands from MacVim
 
-```VimL
+```ruby
 # runs current test under the cursor
 <leader> l
 
