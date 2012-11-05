@@ -22,6 +22,14 @@ to `zsh` on OS X:
 
     $ chsh -s /bin/zsh
 
+Make sure `ctags` are set up correctly
+
+    $ brew install ctags
+
+    $ alias ctags="`brew --prefix`/bin/ctags"
+
+    $ ctags -R
+
 Usage
 -------
 
