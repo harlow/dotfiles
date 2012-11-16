@@ -14,10 +14,9 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 
 # git
-alias g="git"
-# alias gci="git pull --rebase && rake && git push"
+alias gco="git checkout"
 alias gcm="git commit -m"
-alias gcam="git commit -am"
+alias gca="git commit -am"
 
 # Ruby
 alias help-strftime='ruby ~/bin/help-strftime.rb'
