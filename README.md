@@ -7,12 +7,12 @@ Clone dotfiles repository:
     $ cd dotfiles
     $ ./install/symlinks.sh
 
-This will create symlinks for all config files in your home directory. You can
+This will create symlinks for all config files and scripts in bin. You can
 safely run this file multiple times to update.
 
 Clone all of the VIM repos for Pathogen:
 
-For additional vim plugins add to the array in `install_bundles.sh` file.
+For additional vim plugins add to the array in `install/bundles.sh` file.
 
     $ mkdir vim/bundle
     $ ./install/bundles.sh
@@ -36,15 +36,8 @@ Usage
 Run RSpec Tests and other commands from MacVim
 
 ```ruby
-# runs current test under the cursor
-<leader> l
-
-# runs last test
-<leader> r
-
-# runs all tests in current file
-<leader> t
-
-# refreshes open tab in google chrome
-<leader> rl
+<leader> l          # runs current test under the cursor
+<leader> r          # runs last test
+<leader> t          # runs all tests in current file
+<leader> rl         # refreshes open tab in google chrome
 ```
