@@ -54,7 +54,7 @@ prompt hrw
 ctags=/usr/local/bin/ctags
 
 # matches case insensitive for lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # load up hub
 eval "$(hub alias -s)"
