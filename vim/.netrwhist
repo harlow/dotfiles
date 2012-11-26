@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/harlow/Sites/thoughtbot.github.com/jekyll/_layouts'
-let g:netrw_dirhist_2='/Users/harlow/Sites/thoughtbot.com/jekyll/_posts'
-let g:netrw_dirhist_3='/Users/harlow/Sites/trajectory'
-let g:netrw_dirhist_4='/Users/harlow/Sites/mugatu'
