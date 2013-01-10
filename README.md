@@ -5,10 +5,11 @@ Clone dotfiles repository:
 
     $ git clone git@github.com:harlow/dotfiles.git
     $ cd dotfiles
-    $ ./install/symlinks.sh
 
-This will create symlinks for all config files and scripts in bin. You can
-safely run this file multiple times to update.
+Create symlinks for all config files and scripts in bin. You can safely run this
+file multiple times to update.
+
+    $ ./install/symlinks.sh
 
 Clone all of the VIM repos for Pathogen:
 
@@ -17,12 +18,12 @@ For additional vim plugins add to the array in `install/bundles.sh` file.
     $ mkdir vim/bundle
     $ ./install/bundles.sh
 
-There is configuration for `zsh` so switch your shell from the default `bash` 
-to `zsh` on OS X:
+There is configuration for `zsh` so switch your shell from the default `bash`
+to `zsh` on OS X.
 
     $ chsh -s /bin/zsh
 
-Make sure `ctags` are set up correctly
+Make sure `ctags` are set up correctly.
 
     $ brew install ctags
     $ alias ctags="`brew --prefix`/bin/ctags"
