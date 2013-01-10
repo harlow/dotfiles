@@ -51,6 +51,9 @@ set vb
 " Set shell for rvm
 set shell=/bin/sh
 
+" Spell check for .md files
+au BufRead,BufNewFile *.md setlocal spell
+
 "Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 

@@ -14,7 +14,8 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 
 # zeus
-alias zspec="zeus rspec spec/*"
+alias zspec="zeus rspec spec"
+
 # git
 alias gco="git checkout"
 alias gcm="git commit -m"
