@@ -51,6 +51,7 @@ autoload -U promptinit
 promptinit
 prompt hrw
 
+# load ctags user local
 ctags=/usr/local/bin/ctags
 
 # matches case insensitive for lowercase
