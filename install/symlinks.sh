@@ -6,7 +6,6 @@ IGNORED_FILES = [
   '..',
   '.gitignore',
   '.git',
-  'bin',
   'install',
   'README.md'
 ]
@@ -28,20 +27,4 @@ Dir.foreach('.') do |item|
 
   puts " + #{target}"
   `ln -s #{current_path}/#{item} #{target}`
-end
-
-# install symlinks to scripts in /usr/local/bin/file_name
-Dir.foreach('bin') do |item|
-  target = "/usr/local/bin/#{item}"
-  current_path = File.expand_path(File.dirname(File.dirname(__FILE__)))
-  next if IGNORED_FILES.include? item
-  next if File.symlink? target
-
-  if File.exists? target
-    puts "WARNING: #{item} exists but is not a symlnk"
-    next
-  end
-
-  puts " + #{target}"
-  `ln -s #{current_path}/bin/#{item} #{target}`
 end
