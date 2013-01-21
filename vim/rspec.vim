@@ -9,7 +9,7 @@ endfunction
 function! RSpec()
   call ClearTerminal()
   if exists("s:current_test")
-    call SendToTerminal("zeus rspec -fd " . s:current_test)
+    call SendToTerminal("zeus rspec " . s:current_test)
   endif
 endfunction
 
