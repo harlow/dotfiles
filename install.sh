@@ -6,7 +6,7 @@ IGNORED_FILES = [
   '..',
   '.gitignore',
   '.git',
-  'install',
+  'install.sh',
   'README.md'
 ]
 

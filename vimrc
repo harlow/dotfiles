@@ -1,9 +1,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PATHOGEN
+" VUNDLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call pathogen#infect()
-syntax on
-filetype plugin indent on
+if filereadable($HOME . "/.dotfiles/vim/vundle.vim")
+  source ~/.dotfiles/vim/vundle.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SET LEADER KEY
@@ -54,8 +54,8 @@ set shell=/bin/sh
 " Spell check for .md files
 au BufRead,BufNewFile *.md setlocal spell
 
-"Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
+" Snippets are activated by Shift+Tab
+" let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion options for files
 set wildmode=list:longest,list:full
