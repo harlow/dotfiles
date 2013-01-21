@@ -6,7 +6,7 @@ if filereadable($HOME . "/.dotfiles/vim/vundle.vim")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SET LEADER KEY
+" SET LEADER KEY TO SPACEBAR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=" "
 
@@ -113,8 +113,8 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? "<C-n>"  : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? "<C-n>"  : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <C-n> pumvisible() ? "<C-n>" : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? "<C-n>" : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTO TAGS
@@ -124,8 +124,10 @@ if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RAILS.VIM ADDITIONAL SHORTCUTS
+" ADDITIONAL NAVIGATION SHORTCUTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
+autocmd User Rails Rnavcommand concern app/models/concerns -glob=**/*
 autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
