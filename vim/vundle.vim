@@ -18,12 +18,12 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'tsaleh/vim-shoulda'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/tComment'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
+Bundle 'ervandew/supertab'
 
 Bundle 'IndexedSearch'
-Bundle 'jquery'
 
 syntax on
 filetype plugin indent on
