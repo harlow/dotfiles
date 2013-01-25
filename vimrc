@@ -54,6 +54,9 @@ set shell=/bin/sh
 " Spell check for .md files
 au BufRead,BufNewFile *.md setlocal spell
 
+" Remove trailing whitespace on save for ruby files.
+au BufWritePre *.rb :%s/\s\+$//e
+
 " Snippets are activated by Shift+Tab
 " let g:snippetsEmu_key = "<S-Tab>"
 
@@ -70,7 +73,7 @@ let g:html_indent_tags = 'li\|p'
 " Go to file in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-" Window navigation
+" Split screen navigation
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
@@ -104,6 +107,7 @@ function! InsertTabWrapper()
     return "\<c-n>"
   endif
 endfunction
+
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,6 +148,15 @@ nnoremap <Down> :echoe "Use j"<CR>
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OPEN FACTORIES FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! OpenFactoryFile()
+  execute ":sp spec/factories.rb"
+endfunction
+
+map <Leader>f :call OpenFactoryFile()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
