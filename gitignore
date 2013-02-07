@@ -2,3 +2,4 @@ zeus.json
 *.swp
 .env
 .foreman
+.DS_Store
