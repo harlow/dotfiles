@@ -13,17 +13,8 @@ alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 
-# zeus
-alias zspec="zeus rspec spec"
-
-# git
-alias gco="git checkout"
-alias gcm="git commit -m"
-alias gca="git commit -am"
-
 # Ruby
 alias help-strftime='ruby ~/bin/help-strftime.rb'
-alias tags="ctags --exclude='*.js' -f /Users/harlow/Sites/gokamea/tmp/tags -R --langmap='ruby:+.rake.builder.rjs' --languages=-javascript /Users/harlow/Sites/gokamea"
 
 # Bundler
 alias b="bundle"
