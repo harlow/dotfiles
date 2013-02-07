@@ -1,13 +1,6 @@
 # new path
 export PATH="./bin:/usr/local/bin:$PATH"
 
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-
-if [[ -s /Users/harlow/.rvm/scripts/rvm ]] ; then
-  source /Users/harlow/.rvm/scripts/rvm ;
-fi
-
 # load config files
 for file in ~/.zsh/config/**/*.zsh; do
   source $file
