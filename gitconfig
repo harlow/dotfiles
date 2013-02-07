@@ -4,9 +4,9 @@
 [push]
   default = tracking
 [format]
-  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+	pretty = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [alias]
-  ci = commit -v
+	ci = commit
   plre = pull --rebase
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
@@ -15,6 +15,22 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
   lgl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -50
+	st = status
+	di = diff
+	co = checkout
+	br = branch
+	sta = stash
+	llog = log
+	amend = commit --amend -C HEAD
+	reauthor = commit --amend -C HEAD --reset-author
+	conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs mate
+	l = log --graph --abbrev-commit --date=relative
+	la = !git l --all
+	r = !git --no-pager l -20
+	ra = !git r --all
+	aa = add --all
+	pullff = pull --ff-only
+	hard-reset = reset --hard HEAD
 [core]
   editor = vim -f
   excludesfile = /Users/harlow/.gitignore
@@ -22,3 +38,13 @@
   helper = osxkeychain
 [help]
   autocorrect = 1
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[apply]
+	whitespace = nowarn
+[branch]
+	autosetupmerge = true
