@@ -15,7 +15,7 @@ let mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 set background=dark
-colorscheme vividchalk
+colorscheme solarized
 set list listchars=tab:»·,trail:·
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
@@ -57,9 +57,6 @@ au BufRead,BufNewFile *.md setlocal spell
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
-" Snippets are activated by Shift+Tab
-" let g:snippetsEmu_key = "<S-Tab>"
-
 " Tab completion options for files
 set wildmode=list:longest,list:full
 set complete=.,w,t
@@ -80,16 +77,6 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RELOAD CURRENT TAB IN CHROME
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! ReloadChrome()
-  wall
-  execute ":silent !reload_chrome"
-endfunction
-
-nmap <Leader>rl :call ReloadChrome()<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUN RSPEC TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable($HOME . "/.dotfiles/vim/rspec.vim")
@@ -97,21 +84,7 @@ if filereadable($HOME . "/.dotfiles/vim/rspec.vim")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-n>"
-  endif
-endfunction
-
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OMNI COMPLETION OPTIONS
+" TAB COMPLETION OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin on
 set ofu=syntaxcomplete#Complete
@@ -153,7 +126,7 @@ endif
 " OPEN FACTORIES FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! OpenFactoryFile()
-  execute ":sp spec/factories.rb"
+  execute ":vs spec/factories.rb"
 endfunction
 
 map <Leader>f :call OpenFactoryFile()<CR>
