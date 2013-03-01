@@ -1,38 +1,44 @@
-function! SendToTerminal(args)
-  execute ":silent !run_command '" . a:args . "'"
+map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>t :call RunCurrentSpec()<CR>
+map <Leader>l :call RunNearestSpec()<CR>
+map <Leader>r :call RunLastSpec()<CR>
+
+function! RunAllSpecs()
+  let l:command = "rspec"
+  call SetLastSpecCommand(l:command)
+  call RunSpecs(l:command)
 endfunction
 
-function! ClearTerminal()
-  call SendToTerminal("clear")
-endfunction
-
-function! RSpec()
-  call ClearTerminal()
-  if exists("s:current_test")
-    call SendToTerminal("zeus rspec " . s:current_test)
+function! RunCurrentSpec()
+  if InSpecFile()
+    let l:command = "rspec " . @% . " -f documentation"
+    call SetLastSpecCommand(l:command)
+    call RunSpecs(l:command)
   endif
 endfunction
 
-function! RunAllTests()
-  let s:current_test = ''
-  call RSpec()
+function! RunNearestSpec()
+  if InSpecFile()
+    let l:command = "rspec " . @% . " -l " . line(".") . " -f documentation"
+    call SetLastSpecCommand(l:command)
+    call RunSpecs(l:command)
+  endif
 endfunction
 
-function! RunCurrentTest()
-  let s:current_test = expand('%:p')
-  call RSpec()
+function! RunLastSpec()
+  if exists("t:last_spec_command")
+    call RunSpecs(t:last_spec_command)
+  endif
 endfunction
 
-function! RunCurrentLineInTest()
-  let s:current_test = expand('%:p') . ":" . line('.')
-  call RSpec()
+function! InSpecFile()
+  return match(expand("%"), "_spec.rb$") != -1
 endfunction
 
-function! RunLastCommand()
-  call RSpec()
+function! SetLastSpecCommand(command)
+  let t:last_spec_command = a:command
 endfunction
 
-nmap <Leader>a :call RunAllTests()<CR>
-nmap <Leader>t :call RunCurrentTest()<CR>
-nmap <Leader>l :call RunCurrentLineInTest()<CR>
-nmap <Leader>r :call RunLastCommand()<CR>
+function! RunSpecs(command)
+  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
+endfunction
