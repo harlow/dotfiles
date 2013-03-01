@@ -45,8 +45,11 @@ set guifont=Menlo\ Regular:h15
 set colorcolumn=81
 set vb
 
+" Exit from insert mode
+:imap kj <Esc>
+
 " Put vim in background mode
-nnoremap <leader><leader> <c-z>
+nnoremap <leader><leader> <c-^>
 
 " Set shell for rvm
 set shell=/bin/sh
