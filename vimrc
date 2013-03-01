@@ -21,7 +21,7 @@ highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  EDITOR SETTINGS
+" SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
@@ -45,14 +45,20 @@ set guifont=Menlo\ Regular:h15
 set colorcolumn=81
 set vb
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CUSTOM SETTINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Put vim in background mode
+nnoremap <leader><leader> <c-z>
+
 " Set shell for rvm
 set shell=/bin/sh
 
+" Markdown files end in .md
+au BufRead,BufNewFile *.md set filetype=markdown
+
 " Spell check for .md files
 au BufRead,BufNewFile *.md setlocal spell
+
+" Automatically wrap at 80 characters for Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
