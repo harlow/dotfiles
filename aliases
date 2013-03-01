@@ -1,5 +1,6 @@
 # Unix
 alias vi="vim"
+alias mvim="vim"
 alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
@@ -16,22 +17,10 @@ alias -g ONE="| awk '{ print \$1}'"
 # Ruby
 alias help-strftime='ruby ~/bin/help-strftime.rb'
 
-# Bundler
-alias b="bundle"
-alias be="bundle exec"
-alias bake="bundle exec rake"
-alias s="bundle exec rspec"
-alias cuc="bundle exec cucumber"
-
-# Rubygems
-alias gi="gem install"
-alias giv="gem install -v"
-
 # Rails
 alias migrate="bundle exec rake db:migrate db:test:prepare"
 alias seed="bundle exec rake db:seed"
 alias remigrate="bundle exec rake db:migrate db:migrate:redo db:schema:dump db:test:prepare"
-alias remongrate="bundle exec rake mongoid:migrate mongoid:migrate:redo"
 
 # Heroku staging
 alias staging='heroku run console --remote staging'
