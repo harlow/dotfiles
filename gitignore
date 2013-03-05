@@ -3,3 +3,5 @@ zeus.json
 .env
 .foreman
 .DS_Store
+dump.rdb
+

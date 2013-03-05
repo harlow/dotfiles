@@ -1,15 +1,8 @@
-map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>t :call RunCurrentSpec()<CR>
+map <Leader>t :call RunCurrentFile()<CR>
 map <Leader>l :call RunNearestSpec()<CR>
 map <Leader>r :call RunLastSpec()<CR>
 
-function! RunAllSpecs()
-  let l:command = "rspec"
-  call SetLastSpecCommand(l:command)
-  call RunSpecs(l:command)
-endfunction
-
-function! RunCurrentSpec()
+function! RunCurrentFile()
   if InSpecFile()
     let l:command = "rspec " . @% . " -f documentation"
     call SetLastSpecCommand(l:command)
