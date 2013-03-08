@@ -1,5 +1,5 @@
 # new path
-export PATH="~/.bin:/usr/local/bin:$PATH"
+export PATH="./bin:/usr/local/bin:$PATH"
 
 # load config files
 for file in ~/.zsh/config/**/*.zsh; do
