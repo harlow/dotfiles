@@ -41,7 +41,7 @@ set shiftwidth=2
 set expandtab
 set number
 set numberwidth=5
-set guifont=Menlo\ Regular:h15
+set guifont=Menlo\ Regular:h16
 set colorcolumn=81
 set vb
 

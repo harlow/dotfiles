@@ -1,5 +1,5 @@
 # new path
-export PATH="./bin:/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 # load config files
 for file in ~/.zsh/config/**/*.zsh; do
@@ -45,6 +45,3 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
-
-# load up hub
-eval "$(hub alias -s)"
