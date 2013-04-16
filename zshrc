@@ -45,8 +45,6 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
-<<<<<<< HEAD
-=======
 
 # load up hub
 eval "$(hub alias -s)"
@@ -58,4 +56,3 @@ eval "$(rbenv init -)"
 export KAFKA_HOME=/usr/local/kafka_install/kafka
 export KAFKA=$KAFKA_HOME/bindkey
 export KAFKA_CONFIG=$KAFKA_HOME/config
->>>>>>> Added v script for macvim tabs
