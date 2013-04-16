@@ -1,6 +1,7 @@
 zeus.json
 *.swp
 .env
+.ruby-version
 .foreman
 .DS_Store
 dump.rdb

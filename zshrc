@@ -1,5 +1,5 @@
 # new path
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="/Users/harlow/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
 
 # load config files
 for file in ~/.zsh/config/**/*.zsh; do
@@ -45,3 +45,17 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
+<<<<<<< HEAD
+=======
+
+# load up hub
+eval "$(hub alias -s)"
+
+# load rvenv
+eval "$(rbenv init -)"
+
+# kafka
+export KAFKA_HOME=/usr/local/kafka_install/kafka
+export KAFKA=$KAFKA_HOME/bindkey
+export KAFKA_CONFIG=$KAFKA_HOME/config
+>>>>>>> Added v script for macvim tabs

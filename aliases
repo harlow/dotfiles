@@ -1,6 +1,7 @@
 # Unix
-alias vi="vim"
-# alias mvim="vim"
+alias vi="v"
+alias vim="v"
+alias mvim="v"
 alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
