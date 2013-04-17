@@ -14,6 +14,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'mileszs/ack.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
+Bundle 'harlow/vim-colors-railscasts'
 
 " Bundle 'tsaleh/vim-shoulda'
 " Bundle 'vim-ruby/vim-ruby'

@@ -15,10 +15,10 @@ let mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme railscasts
 set list listchars=tab:»·,trail:·
 highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+highlight Folded guibg=#0A0A0A guifg=#9090D0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
