@@ -4,7 +4,7 @@ map <Leader>r :call RunLastSpec()<CR>
 
 function! RunCurrentFile()
   if InSpecFile()
-    let l:command = "rspec " . @% . " -f documentation"
+    let l:command = "zeus rspec " . @%
     call SetLastSpecCommand(l:command)
     call RunSpecs(l:command)
   endif
@@ -12,7 +12,7 @@ endfunction
 
 function! RunNearestSpec()
   if InSpecFile()
-    let l:command = "rspec " . @% . " -l " . line(".") . " -f documentation"
+    let l:command = "zeus rspec " . @% . ":" . line(".")
     call SetLastSpecCommand(l:command)
     call RunSpecs(l:command)
   endif
@@ -33,6 +33,5 @@ function! SetLastSpecCommand(command)
 endfunction
 
 function! RunSpecs(command)
-  " execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
-  execute "!" . a:command
+  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
 endfunction
