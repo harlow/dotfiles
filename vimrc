@@ -112,7 +112,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ADDITIONAL NAVIGATION SHORTCUTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
+autocmd User Rails Rnavcommand config config -glob=**/* -default=routes
 autocmd User Rails Rnavcommand concern app/models/concerns -glob=**/*
 autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
 

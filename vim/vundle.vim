@@ -14,6 +14,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'jnwhiteh/vim-golang'
 
 " Bundle 'tpope/vim-vividchalk'
 " Bundle 'vim-ruby/vim-ruby'
