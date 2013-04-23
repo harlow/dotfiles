@@ -2,7 +2,12 @@
 export PATH="/Users/harlow/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
 
 # load config files
-for file in ~/.zsh/config/**/*.zsh; do
+for file in ~/.zsh/config/*; do
+  source $file
+done
+
+# load function files
+for file in ~/.zsh/functions/*; do
   source $file
 done
 
