@@ -5,4 +5,5 @@ zeus.json
 .foreman
 .DS_Store
 dump.rdb
+custom_plan.rb
 

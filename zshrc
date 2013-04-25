@@ -1,10 +1,6 @@
-# new path
-export PATH="/Users/harlow/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
-
-# load config files
-for file in ~/.zsh/config/*; do
-  source $file
-done
+# add to path
+export PATH="$HOME/gocode/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export GOPATH="$HOME/gocode"
 
 # load function files
 for file in ~/.zsh/functions/*; do
@@ -16,13 +12,11 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# load completion and func paths
-fpath=(~/.zsh/completion $fpath)
-
 # set bell to silent
 set bell-style visible
 
-# completion
+# load completion and func paths
+fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit
 
@@ -30,7 +24,7 @@ compinit
 setopt auto_cd
 
 # use vim as an editor
-export EDITOR=mvim
+export EDITOR=vim
 
 # vi mode
 bindkey -v
@@ -50,14 +44,3 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
-
-# load up hub
-eval "$(hub alias -s)"
-
-# load rvenv
-eval "$(rbenv init -)"
-
-# kafka
-export KAFKA_HOME=/usr/local/kafka_install/kafka
-export KAFKA=$KAFKA_HOME/bindkey
-export KAFKA_CONFIG=$KAFKA_HOME/config
