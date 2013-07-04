@@ -44,3 +44,8 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
+
+# kafka paths
+export KAFKA_HOME=/usr/local/kafka_install/kafka
+export KAFKA=$KAFKA_HOME/bin
+export KAFKA_CONFIG=$KAFKA_HOME/config
