@@ -6,4 +6,9 @@ zeus.json
 .DS_Store
 dump.rdb
 custom_plan.rb
+<<<<<<< Updated upstream
 
+=======
+bin/stubs/*
+tags
+>>>>>>> Stashed changes

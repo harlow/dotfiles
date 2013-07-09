@@ -41,11 +41,30 @@ set shiftwidth=2
 set expandtab
 set number
 set numberwidth=5
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo\ Regular:h14
 set colorcolumn=81
 set vb
 set backspace=indent,eol,start
+
 " set relativenumber
+" set winwidth=84
+" set winheight=5
+" set winminheight=5
+" set winheight=999
+
+" vim-ctrlp new tab
+let g:ctrlp_prompt_mappings = {
+  'AcceptSelection("e")': [],
+  'AcceptSelection("t")': ['<cr>', '<c-m>'],
+ }
+
+" Silver searcher
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" switch between two files
+nnoremap <leader><leader> <c-^>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUN RSPEC TESTS
@@ -131,9 +150,6 @@ augroup vimrcEx
     \ endif
 augroup END
 
-" Put vim in background mode
-nnoremap <leader><leader> <c-z>
-
 " Set shell for rvm
 set shell=/bin/sh
 
@@ -169,7 +185,7 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUN RSPEC TESTS
+" LINE NUMBER TOGGLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -180,13 +196,6 @@ function! NumberToggle()
 endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUN RSPEC TESTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable($HOME . "/.dotfiles/vim/rspec.vim")
-  source ~/.dotfiles/vim/rspec.vim
-endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TAB COMPLETION OPTIONS
