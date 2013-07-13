@@ -46,18 +46,6 @@ set colorcolumn=81
 set vb
 set backspace=indent,eol,start
 
-" set relativenumber
-" set winwidth=84
-" set winheight=5
-" set winminheight=5
-" set winheight=999
-
-" vim-ctrlp new tab
-let g:ctrlp_prompt_mappings = {
-  'AcceptSelection("e")': [],
-  'AcceptSelection("t")': ['<cr>', '<c-m>'],
- }
-
 " Silver searcher
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -65,90 +53,6 @@ endif
 
 " switch between two files
 nnoremap <leader><leader> <c-^>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUN RSPEC TESTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable($HOME . "/.dotfiles/vim/rspec.vim")
-  source ~/.dotfiles/vim/rspec.vim
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TAB COMPLETION OPTIONS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin on
-set ofu=syntaxcomplete#Complete
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? "<C-n>" : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? "<C-n>" : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" AUTO TAGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
-  source ~/.dotfiles/vim/autotag.vim
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ADDITIONAL NAVIGATION SHORTCUTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails Rnavcommand config config -glob=**/* -default=routes
-autocmd User Rails Rnavcommand concern app/models/concerns -glob=**/*
-autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ARROW KEYS ARE UNACCEPTABLE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ACK SEARCH
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OPEN FACTORIES FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! OpenFactoryFile()
-  execute ":vs spec/factories.rb"
-endfunction
-
-map <Leader>f :call OpenFactoryFile()<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-
-map <leader>n :call RenameFile()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JUMP TO LAST KNOWN CURSOR POINT FOR FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup vimrcEx
-  au!
-
-  autocmd FileType text setlocal textwidth=78
-
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-augroup END
 
 " Set shell for rvm
 set shell=/bin/sh
@@ -163,7 +67,7 @@ au BufRead,BufNewFile *.md setlocal spell
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Remove trailing whitespace on save for ruby files
-au BufWritePre *.rb :%s/\s\+$//e
+au BufWritePre *.* :%s/\s\+$//e
 
 " Tab completion options for files
 set wildmode=list:longest,list:full
@@ -178,11 +82,43 @@ let g:html_indent_tags = 'li\|p'
 " Go to file in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-" Split screen navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Dynamic splits sizing
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set winwidth=84
+" set winheight=5
+" set winminheight=5
+" set winheight=999
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GET OFF MY LAWN
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SPLIT SCREEN NAVIGATION
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ADDITIONAL NAVIGATION SHORTCUTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd User Rails Rnavcommand config config -glob=**/* -default=routes
+autocmd User Rails Rnavcommand presenter app/presenters -glob=**/*
+autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUN RSPEC TESTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable($HOME . "/.dotfiles/vim/rspec.vim")
+  source ~/.dotfiles/vim/rspec.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LINE NUMBER TOGGLE
@@ -215,21 +151,6 @@ if filereadable($HOME . "/.dotfiles/vim/autotag.vim")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ADDITIONAL NAVIGATION SHORTCUTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails Rnavcommand config config -glob=**/* -default=routes
-autocmd User Rails Rnavcommand concern app/models/concerns -glob=**/*
-autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ARROW KEYS ARE UNACCEPTABLE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ACK SEARCH
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if executable("ack")
@@ -237,7 +158,7 @@ if executable("ack")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OPEN FACTORIES FILE
+" OPEN FACTORIES IN A SPLIT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! OpenFactoryFile()
   execute ":vs spec/factories.rb"
