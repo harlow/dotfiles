@@ -1,6 +1,9 @@
 # Unix
+alias c='cd ~/code'
+alias tb='cd ~/code/thoughtbot'
+alias hw='cd ~/code/personal'
+alias os='cd ~/code/opensource'
 alias vi="vim"
-alias mvim="vim"
 alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
