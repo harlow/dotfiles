@@ -15,27 +15,22 @@ let mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 colorscheme railscasts
+set guifont=Monaco:h15
 set background=dark
 set list listchars=tab:»·,trail:·
 "highlight NonText guibg=#060606
 "highlight Folded guibg=#0A0A0A guifg=#9090D0
 
-set guifont=Monaco:h12
-let g:NERDTreeWinPos = "right"
-set guioptions-=T " Removes top toolbar
-set guioptions-=r " Removes right hand scroll bar
-set go-=L " Removes left hand scroll bar
+" GUI Options
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 :set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set autochdir
 set backspace=indent,eol,start
 set colorcolumn=81
 set expandtab
-" set guifont=Menlo\ Regular:h16
 set hidden
 set history=50
 set hls
@@ -62,9 +57,6 @@ endif
 
 " jump to previous file
 nnoremap <leader><leader> <c-^>
-
-" Set shell for rvm
-set shell=/bin/sh
 
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown
