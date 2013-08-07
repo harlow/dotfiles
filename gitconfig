@@ -5,8 +5,6 @@
   ff = only
 [push]
   default = tracking
-[format]
-  pretty = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [alias]
   amend = commit --amend -C HEAD
   aa = add --all
