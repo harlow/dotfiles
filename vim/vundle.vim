@@ -5,11 +5,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-distinguished'
 Bundle 'avakhov/vim-yaml'
 Bundle 'ervandew/supertab'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'harlow/railscasts.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
