@@ -3,6 +3,7 @@ alias c='cd ~/code'
 alias tb='cd ~/code/thoughtbot'
 alias hw='cd ~/code/personal'
 alias os='cd ~/code/opensource'
+alias gosrc='cd ~/code/go/src'
 alias vi="vim"
 alias tlf="tail -f"
 alias ln='ln -v'

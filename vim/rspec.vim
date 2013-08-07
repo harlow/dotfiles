@@ -33,5 +33,5 @@ function! SetLastSpecCommand(command)
 endfunction
 
 function! RunSpecs(command)
-  execute "!" . a:command
+  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
 endfunction

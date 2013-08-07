@@ -1,6 +1,6 @@
 # add to path
-export PATH="$HOME/gocode/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
-export GOPATH="$HOME/gocode"
+export PATH="$HOME/code/go/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export GOPATH="$HOME/code/go"
 
 # load function files
 for file in ~/.zsh/functions/*; do
@@ -44,8 +44,3 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
-
-# kafka paths
-export KAFKA_HOME=/usr/local/kafka_install/kafka
-export KAFKA=$KAFKA_HOME/bin
-export KAFKA_CONFIG=$KAFKA_HOME/config

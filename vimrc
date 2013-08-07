@@ -14,8 +14,8 @@ let mapleader=" "
 " COLOR SCHEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
+colorscheme vividchalk
 set background=dark
-colorscheme solarized
 set list listchars=tab:»·,trail:·
 highlight NonText guibg=#060606
 highlight Folded guibg=#0A0A0A guifg=#9090D0
@@ -23,35 +23,36 @@ highlight Folded guibg=#0A0A0A guifg=#9090D0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible  " Use Vim settings, rather then Vi settings
-set nobackup
-set nowritebackup
+set autochdir
+set backspace=indent,eol,start
+set colorcolumn=81
+set expandtab
+set guifont=Menlo\ Regular:h16
+set hidden
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
+set hls
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
+set nobackup
+set nocompatible  " Use Vim settings, rather then Vi settings
 set noswapfile
-set splitright
-set splitbelow
-set hls
-set incsearch
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set nowritebackup
 set number
 set numberwidth=5
-set guifont=Menlo\ Regular:h14
-set colorcolumn=81
+set ruler         " show the cursor position all the time
+set shiftwidth=2
+set showcmd       " display incomplete commands
+set splitbelow
+set splitright
+set tabstop=2
 set vb
-set backspace=indent,eol,start
 
 " Silver searcher
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" switch between two files
+" jump to previous file
 nnoremap <leader><leader> <c-^>
 
 " Set shell for rvm
