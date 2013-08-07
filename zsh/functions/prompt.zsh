@@ -11,4 +11,4 @@ precmd () {
   vcs_info
 }
 
-PROMPT='%F{grey}%3~${vcs_info_msg_0_} %F{yellow}$%F{grey} '
+PROMPT='%F{grey}%3~${vcs_info_msg_0_} %F{grey}$%F{grey} '
