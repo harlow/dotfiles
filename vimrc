@@ -21,15 +21,9 @@ let mapleader=" "
 " COLOR SCHEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-colorscheme codeschool
+colorscheme railscasts
 set guifont=Monaco:h15
 set background=dark
-set list listchars=tab:»·,trail:·
-" highlight NonText guibg=#060606
-" highlight Folded guibg=#0A0A0A guifg=#9090D0
-" GUI Options
-" autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
-" :set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
@@ -42,6 +36,7 @@ set history=50
 set hls
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
+set list listchars=tab:»·,trail:·
 set nobackup
 set nocompatible  " Use Vim settings, rather then Vi settings
 set noswapfile
