@@ -21,19 +21,22 @@ endfor
 " COLOR SCHEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-colorscheme railscasts
+colorscheme solarized
 set guifont=Monaco:h15
 set background=dark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoindent
 set backspace=indent,eol,start
+set bs=2
 set colorcolumn=81
+set complete-=i " don't look in included files when autocompleting
 set expandtab
 set hidden
 set history=50
-set hls
+set hlsearch
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set list listchars=tab:»·,trail:·
@@ -48,6 +51,7 @@ set shiftwidth=2
 set showcmd       " display incomplete commands
 set splitbelow
 set splitright
+set wildmode=longest,list
 set tabstop=2
 set vb
 
