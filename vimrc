@@ -84,6 +84,9 @@ let g:html_indent_tags = 'li\|p'
 " Go to file in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+" Set rules for git commit files
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GET OFF MY LAWN
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -5,6 +5,7 @@ alias hw='cd ~/code/personal'
 alias ht='cd ~/code/hoteltonight'
 alias os='cd ~/code/opensource'
 alias gosrc='cd ~/code/go/src'
+alias gorun='~/code/go/go_appengine/dev_appserver.py .'
 alias ht='cd ~/code/hoteltonight'
 alias vi="vim"
 alias tlf="tail -f"

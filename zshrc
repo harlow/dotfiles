@@ -1,5 +1,5 @@
 # add to path
-export PATH="$HOME/code/go/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$HOME/code/go/bin:$HOME/code/go/go_appengine:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/code/go"
 
 # load function files
