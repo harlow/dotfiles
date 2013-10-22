@@ -109,6 +109,7 @@ nmap <C-L> <C-W><C-L>
 autocmd User Rails Rnavcommand config config -glob=**/* -default=routes
 autocmd User Rails Rnavcommand policy app/policies -glob=**/* -suffix=_policy.rb
 autocmd User Rails Rnavcommand service app/services -glob=**/*
+autocmd User Rails Rnavcommand serializer app/serializers -glob=**/*
 autocmd User Rails Rnavcommand presenter app/presenters -glob=**/*
 autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
 

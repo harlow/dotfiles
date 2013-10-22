@@ -1,6 +1,7 @@
 # add to path
 export PATH="$HOME/code/go/bin:$HOME/code/go/go_appengine:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/code/go"
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 
 # load function files
 for file in ~/.zsh/functions/*; do
@@ -38,6 +39,8 @@ setopt histignoredups
 
 # keep more history
 export HISTSIZE=200
+export SAVEHIST=200
+export HISTFILE=~/.history
 
 # look for ey config in project dirs
 export EYRC=./.eyrc
