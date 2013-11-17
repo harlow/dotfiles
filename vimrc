@@ -77,11 +77,14 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Go to file in new tab
+" Go to file in vertical split
 map <C-\> :vs<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Set rules for git commit files
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" CtrlP
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GET OFF MY LAWN
