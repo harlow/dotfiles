@@ -1,34 +1,34 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
 
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-distinguished'
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Define bundles via Github repos
 Bundle 'avakhov/vim-yaml'
 Bundle 'ervandew/supertab'
+Bundle 'harlow/codeschool-vim-theme'
 Bundle 'jnwhiteh/vim-golang'
-Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'harlow/railscasts.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'pangloss/vim-javascript'
-Bundle 'thoughtbot/vim-magictags'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
 
-Bundle 'IndexedSearch'
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
 
-syntax on
-filetype plugin indent on
+filetype on

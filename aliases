@@ -1,4 +1,6 @@
 # Unix
+
+# Folder shortcuts
 alias c='cd ~/code'
 alias tb='cd ~/code/thoughtbot'
 alias hw='cd ~/code/personal'
@@ -7,7 +9,9 @@ alias os='cd ~/code/opensource'
 alias golang='cd ~/code/go/src'
 alias gorun='dev_appserver.py .'
 alias ht='cd ~/code/hoteltonight'
-alias vi="vim"
+
+# Terminal
+alias vi="v"
 alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'

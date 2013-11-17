@@ -21,7 +21,7 @@ endfor
 " COLOR SCHEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-colorscheme solarized
+color codeschool
 set guifont=Monaco:h15
 set background=dark
 
