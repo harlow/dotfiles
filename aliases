@@ -2,13 +2,13 @@
 
 # Folder shortcuts
 alias c='cd ~/code'
-alias tb='cd ~/code/thoughtbot'
-alias hw='cd ~/code/personal'
-alias ht='cd ~/code/hoteltonight'
-alias os='cd ~/code/opensource'
 alias golang='cd ~/code/go/src'
 alias gorun='dev_appserver.py .'
 alias ht='cd ~/code/hoteltonight'
+alias ht='cd ~/code/hoteltonight'
+alias hw='cd ~/code/personal'
+alias os='cd ~/code/opensource'
+alias tb='cd ~/code/thoughtbot'
 
 # Terminal
 alias vi="v"
@@ -24,6 +24,9 @@ alias -g G='| grep'
 alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
+
+# Ctags
+alias ctags="`brew --prefix`/bin/ctags"
 
 # Git
 alias gp='git push'

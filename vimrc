@@ -63,13 +63,9 @@ endif
 " jump to previous file
 nnoremap <leader><leader> <c-^>
 
-" Markdown files end in .md
+" Markdown options
 au BufRead,BufNewFile *.md set filetype=markdown
-
-" Spell check for .md files
 au BufRead,BufNewFile *.md setlocal spell
-
-" Automatically wrap at 80 characters for Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Remove trailing whitespace on save for ruby files
@@ -102,16 +98,6 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ADDITIONAL NAVIGATION SHORTCUTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd User Rails Rnavcommand config config -glob=**/* -default=routes
-autocmd User Rails Rnavcommand policy app/policies -glob=**/* -suffix=_policy.rb
-autocmd User Rails Rnavcommand service app/services -glob=**/*
-autocmd User Rails Rnavcommand serializer app/serializers -glob=**/*
-autocmd User Rails Rnavcommand presenter app/presenters -glob=**/*
-autocmd User Rails Rnavcommand decorator app/decorators -glob=**/* -suffix=_decorator.rb -default=model()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ACK SEARCH
