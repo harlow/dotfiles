@@ -2,9 +2,9 @@
 
 # Folder shortcuts
 alias c='cd ~/code'
+alias d='cd ~/code/personal/dotfiles'
 alias golang='cd ~/code/go/src'
 alias gorun='dev_appserver.py .'
-alias ht='cd ~/code/hoteltonight'
 alias ht='cd ~/code/hoteltonight'
 alias hw='cd ~/code/personal'
 alias os='cd ~/code/opensource'

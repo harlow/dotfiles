@@ -1,8 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VUNDLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable($HOME . "/.dotfiles/vimrc.bundles")
-  source ~/.dotfiles/vimrc.bundles
+if filereadable($HOME . "/.vimrc.bundles")
+  source ~/.vimrc.bundles
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -13,7 +13,7 @@ let mapleader=" "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IMPORT FUNCTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-for fpath in split(globpath('~/.dotfiles/vim/functions', '*.vim'), '\n')
+for fpath in split(globpath('~/.vim/functions', '*.vim'), '\n')
   exec 'source' fpath
 endfor
 
@@ -71,7 +71,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 " Remove trailing whitespace on save for ruby files
 au BufWritePre *.* :%s/\s\+$//e
 
-" Tags
+" Ctags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 " Treat <li> and <p> tags like the block tags they are
