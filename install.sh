@@ -4,10 +4,11 @@ require 'fileutils'
 IGNORED_FILES = [
   '.',
   '..',
-  '.gitignore',
   '.git',
+  '.gitignore',
+  'README.md',
+  'icons',
   'install.sh',
-  'README.md'
 ]
 
 puts 'Creating symlinks'

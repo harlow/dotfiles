@@ -1,8 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VUNDLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable($HOME . "/.dotfiles/vim/vundle.vim")
-  source ~/.dotfiles/vim/vundle.vim
+if filereadable($HOME . "/.dotfiles/vimrc.bundles")
+  source ~/.dotfiles/vimrc.bundles
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
