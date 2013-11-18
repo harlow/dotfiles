@@ -11,19 +11,20 @@ alias os='cd ~/code/opensource'
 alias tb='cd ~/code/thoughtbot'
 
 # Terminal
-alias vi="v"
-alias tlf="tail -f"
-alias ln='ln -v'
-alias mkdir='mkdir -p'
-alias ...='../..'
-alias l='ls'
-alias ls='ls -la'
-alias ll='ls -al'
-alias lh='ls -Alh'
 alias -g G='| grep'
-alias -g M='| less'
 alias -g L='| wc -l'
+alias -g M='| less'
 alias -g ONE="| awk '{ print \$1}'"
+alias ...='../..'
+alias b='bundle exec'
+alias l='ls'
+alias lh='ls -Alh'
+alias ll='ls -al'
+alias ln='ln -v'
+alias ls='ls -la'
+alias mkdir='mkdir -p'
+alias tlf="tail -f"
+alias vi="v"
 
 # Ctags
 alias ctags="`brew --prefix`/bin/ctags"
