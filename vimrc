@@ -22,7 +22,7 @@ endfor
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 color codeschool
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo:h16
 set background=dark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
