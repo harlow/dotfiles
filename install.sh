@@ -9,6 +9,7 @@ IGNORED_FILES = [
   'README.md',
   'icons',
   'install.sh',
+  'images',
 ]
 
 puts 'Creating symlinks'
