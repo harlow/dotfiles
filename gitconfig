@@ -6,14 +6,11 @@
 [push]
   default = tracking
 [alias]
-  aa = add --all
   amend = commit --amend -C HEAD
-  br = branch
-  ci = commit -v
+  ap = add -p
   co = checkout
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
-  di = diff
   jk = !git add --all && git commit --amend --no-edit && git push -f
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lgl = !git --no-pager lg -50
