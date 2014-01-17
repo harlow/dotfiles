@@ -8,6 +8,7 @@ alias gorun='dev_appserver.py .'
 alias ht='cd ~/code/hoteltonight'
 alias hw='cd ~/code/personal'
 alias os='cd ~/code/opensource'
+alias sb='cd ~/code/sandbox'
 alias tb='cd ~/code/thoughtbot'
 
 # Terminal

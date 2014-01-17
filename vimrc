@@ -68,7 +68,10 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.md setlocal spell
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
-" Remove trailing whitespace on save for ruby files
+" Thrift
+au BufRead,BufNewFile *.thrift set filetype=thrift
+
+" Remove trailing whitespace on save
 au BufWritePre *.* :%s/\s\+$//e
 
 " Ctags
