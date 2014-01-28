@@ -13,9 +13,11 @@ file multiple times to update.
 
 Install custom VIM plugins with Vundle:
 
-    :BundleInstall
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-Manage the list of vim plugins in `vim/vundles.sh`.
+Manage the list of vim plugins in `vimrc.bundles`.
+
+    :BundleInstall
 
 There is configuration for `zsh` so switch your shell from the default `bash`
 to `zsh` on OS X.

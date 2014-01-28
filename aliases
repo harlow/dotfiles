@@ -25,7 +25,7 @@ alias ln='ln -v'
 alias ls='ls -la'
 alias mkdir='mkdir -p'
 alias tlf="tail -f"
-alias vi="v"
+alias vi="vim"
 
 # Ctags
 alias ctags="`brew --prefix`/bin/ctags"

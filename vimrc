@@ -21,9 +21,9 @@ endfor
 " COLOR SCHEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-color codeschool
-set guifont=Menlo:h16
 set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
@@ -34,6 +34,7 @@ set bs=2
 set colorcolumn=81
 set complete-=i " don't look in included files when autocompleting
 set expandtab
+set guifont=Menlo:h16
 set hidden
 set history=50
 set hlsearch
