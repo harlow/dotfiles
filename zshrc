@@ -47,3 +47,6 @@ export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
+
+# alias hub with git
+eval "$(hub alias -s)"

@@ -2,14 +2,11 @@
 
 # Folder shortcuts
 alias c='cd ~/code'
-alias d='cd ~/code/personal/dotfiles'
+alias d='cd ~/code/dotfiles'
 alias golang='cd ~/code/go/src'
 alias gorun='dev_appserver.py .'
-alias ht='cd ~/code/hoteltonight'
-alias hw='cd ~/code/personal'
-alias os='cd ~/code/opensource'
-alias sb='cd ~/code/sandbox'
-alias tb='cd ~/code/thoughtbot'
+alias ht='cd ~/code/hotelstonight'
+alias etl='cd ~/code/analytics-etl'
 
 # Terminal
 alias -g G='| grep'
