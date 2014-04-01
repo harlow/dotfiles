@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+<C-n>	vim/functions/number_toggle.vim	/^nnoremap <C-n> :call NumberToggle()<cr>$/;"	m
+<Leader>a	vim/functions/rspec.vim	/^map <Leader>a :call RunAllSpecs()<CR>$/;"	m
+<Leader>f	vim/functions/factory_girl.vim	/^map <Leader>f :call OpenFactoryFile()<CR>$/;"	m
+<Leader>l	vim/functions/rspec.vim	/^map <Leader>l :call RunLastSpec()<CR>$/;"	m
+<Leader>s	vim/functions/rspec.vim	/^map <Leader>s :call RunNearestSpec()<CR>$/;"	m
+<Leader>t	vim/functions/rspec.vim	/^map <Leader>t :call RunCurrentSpecFile()<CR>$/;"	m
+<leader>n	vim/functions/rename_file.vim	/^map <leader>n :call RenameFile()<cr>$/;"	m
+NumberToggle	vim/functions/number_toggle.vim	/^function! NumberToggle()$/;"	f
+OpenFactoryFile	vim/functions/factory_girl.vim	/^function! OpenFactoryFile()$/;"	f
+RenameFile	vim/functions/rename_file.vim	/^function! RenameFile()$/;"	f
+precmd	zsh/functions/prompt.zsh	/^precmd () {$/;"	f
+rake	zsh/functions/rake.zsh	/^rake() {$/;"	f
+redstart	zsh/functions/redis.zsh	/^redstart() {$/;"	f
+redstop	zsh/functions/redis.zsh	/^redstop() {$/;"	f
+rspec	zsh/functions/rspec.zsh	/^rspec() {$/;"	f
+vimrcEx	vim/functions/last_cursor_position.vim	/^augroup vimrcEx$/;"	a

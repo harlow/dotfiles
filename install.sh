@@ -5,6 +5,7 @@ IGNORED_FILES = [
   '.',
   '..',
   '.git',
+  '.tags',
   '.gitignore',
   'README.md',
   'icons',

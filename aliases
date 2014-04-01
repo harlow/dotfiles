@@ -3,10 +3,11 @@
 # Folder shortcuts
 alias c='cd ~/code'
 alias d='cd ~/code/dotfiles'
+alias etl='cd ~/code/hoteltonight/analytics-etl'
 alias golang='cd ~/code/go/src'
 alias gorun='dev_appserver.py .'
-alias ht='cd ~/code/hotelstonight'
-alias etl='cd ~/code/analytics-etl'
+alias ht='cd ~/code/hoteltonight'
+alias hw='cd ~/code/personal'
 
 # Terminal
 alias -g G='| grep'

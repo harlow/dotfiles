@@ -2,6 +2,7 @@
 export PATH="$HOME/code/go/bin:$HOME/code/go/go_appengine:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/code/go"
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # load function files
 for file in ~/.zsh/functions/*; do
