@@ -1,13 +1,17 @@
 # Unix
 
+# Youtube DL
+alias dl="youtube-dl --add-metadata -o '/Users/harlow/Downloads/_music/%(title)s.%(ext)s'"
+
 # Folder shortcuts
 alias c='cd ~/code'
 alias d='cd ~/code/dotfiles'
 alias etl='cd ~/code/hoteltonight/analytics-etl'
-alias golang='cd ~/code/go/src'
+alias g='cd ~/code/go/src/github.com/harlow'
 alias gorun='dev_appserver.py .'
 alias ht='cd ~/code/hoteltonight'
 alias hw='cd ~/code/personal'
+alias j='cd ~/code/workspace'
 
 # Terminal
 alias -g G='| grep'

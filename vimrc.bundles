@@ -8,15 +8,16 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'avakhov/vim-yaml'
 Bundle 'ervandew/supertab'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'harlow/codeschool-vim-theme'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'smerrill/vcl-vim-plugin'
+Bundle 'sprsquish/thrift.vim'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-endwise'
@@ -25,10 +26,12 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
-Bundle 'sprsquish/thrift.vim'
+Bundle 'majutsushi/tagbar'
+
+" Plugins
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

@@ -5,6 +5,11 @@ if filereadable($HOME . "/.vimrc.bundles")
   source ~/.vimrc.bundles
 endif
 
+let g:rspec_command = "!bundle exec zeus rspec {spec}"
+
+" Reload vimrc when its saved
+" autocmd! bufwritepost vimrc source ~/.vimrc
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SET LEADER KEY TO SPACEBAR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,7 +45,6 @@ set history=50
 set hlsearch
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
-set list listchars=tab:»·,trail:·
 set nobackup
 set nocompatible  " Use Vim settings, rather then Vi settings
 set noswapfile
@@ -64,6 +68,9 @@ endif
 " jump to previous file
 nnoremap <leader><leader> <c-^>
 
+" highlight tabs and trailing space in Ruby
+au BufNewFile,BufRead *.rb set list listchars=tab:»·,trail:·
+
 " Markdown options
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.md setlocal spell
@@ -74,6 +81,39 @@ au BufRead,BufNewFile *.thrift set filetype=thrift
 
 " Remove trailing whitespace on save
 au BufWritePre *.* :%s/\s\+$//e
+
+" Golang tabs and vim-go settings
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 " Ctags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
