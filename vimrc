@@ -5,7 +5,7 @@ if filereadable($HOME . "/.vimrc.bundles")
   source ~/.vimrc.bundles
 endif
 
-let g:rspec_command = "!bundle exec zeus rspec {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 " Reload vimrc when its saved
 " autocmd! bufwritepost vimrc source ~/.vimrc
