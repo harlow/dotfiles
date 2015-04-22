@@ -5,9 +5,13 @@ alias dl="youtube-dl --add-metadata -o '/tmp/%(title)s.%(ext)s'; cp '/tmp/%(titl
 
 # Folder shortcuts
 alias be='bundle exec'
+alias f='fleetctl'
 alias code='cd ~/code'
 alias c='irb -r ./app.rb'
 alias cb='cd ~/code/clearbit'
+alias ph='cd ~/code/clearbit/person'
+alias ch='cd ~/code/clearbit/company'
+alias apihub='cd ~/code/clearbit/apihub'
 alias cs='irb -r ./app.rb'
 alias d='cd ~/code/personal/dotfiles'
 alias g='cd ~/code/go/src/github.com/harlow'

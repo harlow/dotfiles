@@ -4,11 +4,11 @@ export GOPATH="$HOME/code/go"
 export DOCKER_HOST="tcp://$(boot2docker ip 2>/dev/null):2376"
 export DOCKER_TLS_VERIFY=1
 export DOCKER_CERT_PATH=/Users/harlow/.boot2docker/certs/boot2docker-vm
-# export GOPATH=`godep path`:$GOPATH
 export GOBIN="$GOPATH/bin"
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 export JAVA_HOME=$(/usr/libexec/java_home)
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+source "$HOME/.env.local"
 
 # load function files
 for file in ~/.zsh/functions/*; do
@@ -33,6 +33,7 @@ setopt auto_cd
 
 # use vim as an editor
 export EDITOR=vim
+export BUNDLER_EDITOR=subl
 
 # vi mode
 bindkey -v
@@ -48,9 +49,6 @@ setopt histignoredups
 export HISTSIZE=200
 export SAVEHIST=200
 export HISTFILE=~/.history
-
-# look for ey config in project dirs
-export EYRC=./.eyrc
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
