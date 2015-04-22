@@ -1,13 +1,9 @@
 # add to path
-export PATH="$HOME/code/go/bin:$HOME/code/go/go_appengine:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$HOME/code/go/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/code/go"
-export DOCKER_HOST="tcp://$(boot2docker ip 2>/dev/null):2376"
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/Users/harlow/.boot2docker/certs/boot2docker-vm
 export GOBIN="$GOPATH/bin"
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
-export JAVA_HOME=$(/usr/libexec/java_home)
 
+# load custom env vars
 source "$HOME/.env.local"
 
 # load function files
