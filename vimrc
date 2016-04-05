@@ -5,11 +5,6 @@ if filereadable($HOME . "/.vimrc.bundles")
   source ~/.vimrc.bundles
 endif
 
-let g:rspec_command = "!bundle exec rspec {spec}"
-
-" Reload vimrc when its saved
-" autocmd! bufwritepost vimrc source ~/.vimrc
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SET LEADER KEY TO SPACEBAR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -37,7 +32,7 @@ set autoindent
 set backspace=indent,eol,start
 set bs=2
 set colorcolumn=81
-set complete-=i " don't look in included files when autocompleting
+set complete-=i    " don't look in included files when autocompleting
 set expandtab
 set guifont=Menlo:h16
 set hidden
@@ -53,10 +48,10 @@ set number
 set numberwidth=5
 set ruler         " show the cursor position all the time
 set shiftwidth=2
+set shortmess=I
 set showcmd       " display incomplete commands
 set splitbelow
 set splitright
-set wildmode=longest,list
 set tabstop=2
 set vb
 
@@ -76,9 +71,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.md setlocal spell
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
-" Thrift
-au BufRead,BufNewFile *.thrift set filetype=thrift
-
 " Remove trailing whitespace on save
 au BufWritePre *.* :%s/\s\+$//e
 
@@ -86,34 +78,6 @@ au BufWritePre *.* :%s/\s\+$//e
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
 
 " Ctags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
@@ -127,8 +91,32 @@ map <C-\> :vs<CR>:exec("tag ".expand("<cword>"))<CR>
 " Set rules for git commit files
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-" CtrlP
+" CtrlP ignore files
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUN SPECS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> <leader>s :TestNearest<CR>
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TAB COMPLETION
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildmode=list:longest,list:full
+" set complete=.,w,t
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GET OFF MY LAWN
@@ -152,3 +140,22 @@ nmap <C-L> <C-W><C-L>
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AUTO PASTE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GO LINT
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim

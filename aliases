@@ -3,16 +3,18 @@
 # Youtube DL
 alias dl="youtube-dl --add-metadata -o '/tmp/%(title)s.%(ext)s'; cp '/tmp/%(title)s.%(ext)s' '/Users/harlow/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized/%(title)s.%(ext)s'"
 
+# Fluster connect
+alias rc='fluster console irb -r -a '
+alias fleetg='fleetctl list-units | grep '
+
 # Folder shortcuts
 alias be='bundle exec'
-alias f='fleetctl'
-alias code='cd ~/code'
 alias c='irb -r ./app.rb'
 alias cb='cd ~/code/clearbit'
 alias ph='cd ~/code/clearbit/person'
 alias ch='cd ~/code/clearbit/company'
 alias apihub='cd ~/code/clearbit/apihub'
-alias cs='irb -r ./app.rb'
+alias sheets='cd ~/code/clearbit/sheets'
 alias d='cd ~/code/personal/dotfiles'
 alias g='cd ~/code/go/src/github.com/harlow'
 alias hw='cd ~/code/personal'
@@ -39,6 +41,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 # Git
 alias gp='git push'
 alias gs='git status'
+alias wip='git commit -am "wip"'
 
 # Ruby
 alias help-strftime='ruby ~/bin/help-strftime.rb'

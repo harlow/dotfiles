@@ -1,7 +1,9 @@
 # add to path
 export PATH="$HOME/code/go/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
+export KONG_PATH="$HOME/code/kong"
 
 # load custom env vars
 source "$HOME/.env.local"
@@ -24,9 +26,6 @@ fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit
 
-# automatically enter directories without cd
-setopt auto_cd
-
 # use vim as an editor
 export EDITOR=vim
 export BUNDLER_EDITOR=subl
@@ -48,3 +47,5 @@ export HISTFILE=~/.history
 
 # load ctags user local
 ctags=/usr/local/bin/ctags
+
+eval $(docker-machine env default)
