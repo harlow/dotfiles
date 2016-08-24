@@ -11,4 +11,6 @@ precmd () {
   vcs_info
 }
 
-PROMPT='%F{grey}%3~${vcs_info_msg_0_} %F{grey}$%F{grey} '
+__convox_switch() { [ -e ~/.convox/rack ] && convox switch || echo unknown; }
+
+PROMPT='%F{grey}%3~${vcs_info_msg_0_} [$(__convox_switch)] %F{grey}$%F{grey} '
