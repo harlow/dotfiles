@@ -11,6 +11,14 @@ precmd () {
   vcs_info
 }
 
-__convox_switch() { [ -e ~/.convox/rack ] && convox switch || echo unknown; }
+function deisenv {
+  if [[ $(clearbit-env) == 'production' ]]; then
+      echo '%F{red}[prod]%F{red}' && return
+  fi
+  if [[ $(clearbit-env) == 'staging' ]]; then
+      echo '%F{yellow}[stag]%F{yellow}' && return
+  fi
+  echo '%F{blue}[dev]%F{blue}'
+}
 
-PROMPT='%F{grey}%3~${vcs_info_msg_0_} [$(__convox_switch)] %F{grey}$%F{grey} '
+PROMPT='$(deisenv) %F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '
