@@ -1,9 +1,12 @@
 # add to path
-export PATH="$HOME/code/go/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH"
-export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="./bin:/usr/local/bin:$HOME/code/go/bin:$HOME/.bin:$PATH"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:/Users/harlow/Downloads/go_appengine/
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
-export KONG_PATH="$HOME/code/kong"
+
+# don't cache the bin files
+set +h
 
 # load custom env vars
 source "$HOME/.env.local"
@@ -24,7 +27,6 @@ set bell-style visible
 # load completion and func paths
 fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
-compinit
 
 # use vim as an editor
 export EDITOR=vim
@@ -48,4 +50,6 @@ export HISTFILE=~/.history
 # load ctags user local
 ctags=/usr/local/bin/ctags
 
-eval $(docker-machine env default)
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi

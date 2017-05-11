@@ -12,18 +12,20 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'avakhov/vim-yaml'
 Bundle 'fatih/vim-go'
 Bundle 'janko-m/vim-test'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'smerrill/vcl-vim-plugin'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
+
+" Disabled
+"Bundle 'pangloss/vim-javascript'
+"Bundle 'kchmck/vim-coffee-script'
+"Bundle 'vim-scripts/ctags.vim'
+"Bundle 'smerrill/vcl-vim-plugin'
 
 " Plugins
 Plugin 'nsf/gocode', {'rtp': 'vim/'}

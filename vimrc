@@ -1,33 +1,23 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VUNDLE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vundle
 if filereadable($HOME . "/.vimrc.bundles")
   source ~/.vimrc.bundles
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SET LEADER KEY TO SPACEBAR
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set leader to spacebar
 let mapleader=" "
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" IMPORT FUNCTIONS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" import all functions
 for fpath in split(globpath('~/.vim/functions', '*.vim'), '\n')
   exec 'source' fpath
 endfor
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLOR SCHEME
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colors
 syntax enable
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SETTINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" general settings
 set autoindent
 set backspace=indent,eol,start
 set bs=2
@@ -94,18 +84,14 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " CtrlP ignore files
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUN SPECS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" spec runners
 nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TAB COMPLETION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tab completion
 set wildmode=list:longest,list:full
 " set complete=.,w,t
 function! InsertTabWrapper()
@@ -118,32 +104,24 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GET OFF MY LAWN
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SPLIT SCREEN NAVIGATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" split screen nav
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ACK SEARCH
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" search
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" AUTO PASTE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" friendly paste
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
@@ -155,7 +133,5 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GO LINT
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" go linter
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
