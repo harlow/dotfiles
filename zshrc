@@ -1,7 +1,7 @@
 # add to path
 export PATH="./bin:/usr/local/bin:$HOME/code/go/bin:$HOME/.bin:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH=$PATH:/Users/harlow/Downloads/go_appengine/
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 
@@ -33,11 +33,11 @@ export EDITOR=vim
 export BUNDLER_EDITOR=subl
 
 # vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
+# bindkey -v
+# bindkey "^F" vi-cmd-mode
 
 # use incremental search
-bindkey "^R" history-incremental-search-backward
+# bindkey "^R" history-incremental-search-backward
 
 # ignore duplicate history entries
 setopt histignoredups

@@ -3,9 +3,6 @@
 # Youtube DL
 alias dl="youtube-dl --add-metadata -o '/tmp/%(title)s.%(ext)s'; cp '/tmp/%(title)s.%(ext)s' '/Users/harlow/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized/%(title)s.%(ext)s'"
 
-# Fluster connect
-alias rc='workflow irb'
-
 # Folder shortcuts
 alias be='bundle exec'
 alias c='irb -r ./app.rb'
@@ -17,7 +14,6 @@ alias ph='cd ~/code/clearbit/person'
 alias ch='cd ~/code/clearbit/company'
 alias wiki='cd ~/code/clearbit/apihub.wiki; git pull; subl .'
 alias apihub='cd ~/code/clearbit/apihub'
-alias d='cd ~/code/personal/dotfiles'
 
 # Terminal
 alias -g G='| grep'
@@ -32,7 +28,6 @@ alias ll='ls -al'
 alias ln='ln -v'
 alias ls='ls -la'
 alias mkdir='mkdir -p'
-alias tlf="tail -f"
 alias vi="vim"
 
 # Git
