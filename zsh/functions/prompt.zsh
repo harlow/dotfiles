@@ -27,13 +27,13 @@ precmd () {
 
 function cbenv {
   if [[ $(clearbit-env) == 'us-west-1.prod' ]]; then
-      echo '%F{red}±%F{red}' && return
+      echo '🔺 ' && return
   fi
   if [[ $(clearbit-env) == 'us-west-1.staging-2' ]]; then
-      echo '%F{yellow}±%F{yellow}' && return
+      echo '🔸 ' && return
   fi
   if [[ $(clearbit-env) == 'us-west-1.dev-2' ]]; then
-    echo '%F{blue}±%F{blue}' && return
+      echo '🔹 ' && return
   fi
 }
 
