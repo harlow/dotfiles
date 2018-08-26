@@ -6,10 +6,10 @@ alias dl="youtube-dl --add-metadata -o '/tmp/%(title)s.%(ext)s'; cp '/tmp/%(titl
 # Folder shortcuts
 alias be='bundle exec'
 alias c='irb -r ./app.rb'
-alias cb='cd ~/code/clearbit'
-alias cbg='cd ~/code/go/src/github.com/clearbit'
+alias cbr='cd ~/code/clearbit'
+alias cbg='cd ~/go/src/github.com/clearbit'
 alias hw='cd ~/code/personal'
-alias hwg='cd ~/code/go/src/github.com/harlow'
+alias hwg='cd ~//go/src/github.com/harlow'
 alias ph='cd ~/code/clearbit/person'
 alias ch='cd ~/code/clearbit/company'
 alias wiki='cd ~/code/clearbit/apihub.wiki; git pull; subl .'

@@ -25,14 +25,16 @@ precmd () {
   vcs_info
 }
 
-function deisenv {
-  if [[ $(clearbit-env) == 'production' ]]; then
+function cbenv {
+  if [[ $(clearbit-env) == 'us-west-1.prod' ]]; then
       echo '%F{red}±%F{red}' && return
   fi
-  if [[ $(clearbit-env) == 'staging' ]]; then
+  if [[ $(clearbit-env) == 'us-west-1.staging-2' ]]; then
       echo '%F{yellow}±%F{yellow}' && return
   fi
-  echo '%F{blue}±%F{blue}'
+  if [[ $(clearbit-env) == 'us-west-1.dev-2' ]]; then
+    echo '%F{blue}±%F{blue}' && return
+  fi
 }
 
-PROMPT='$(deisenv) %F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '
+PROMPT='$(cbenv) %F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '

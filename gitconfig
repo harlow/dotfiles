@@ -40,3 +40,5 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
+[url "git@github.com:clearbit"]
+	insteadof = https://github.com/clearbit
