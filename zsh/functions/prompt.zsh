@@ -26,15 +26,15 @@ precmd () {
 }
 
 function cbenv {
-  if [[ $(clearbit-env) == 'us-west-1.prod' ]]; then
-      echo '🔺 ' && return
+  if [[ $CB_ENV == 'us-west-1.prod' ]]; then
+      echo '🔺  ' && return
   fi
-  if [[ $(clearbit-env) == 'us-west-1.staging-2' ]]; then
-      echo '🔸 ' && return
+  if [[ $CB_ENV == 'us-west-1.staging-2' ]]; then
+      echo '🔸  ' && return
   fi
-  if [[ $(clearbit-env) == 'us-west-1.dev-2' ]]; then
-      echo '🔹 ' && return
+  if [[ $CB_ENV == 'us-west-1.dev-2' ]]; then
+      echo '🔹  ' && return
   fi
 }
 
-PROMPT='$(cbenv) %F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '
+PROMPT='$(cbenv)%F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '

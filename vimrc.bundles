@@ -2,14 +2,14 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'avakhov/vim-yaml'
+" Bundle 'avakhov/vim-yaml'
 Bundle 'fatih/vim-go'
 Bundle 'janko-m/vim-test'
 Bundle 'kien/ctrlp.vim'
@@ -35,3 +35,7 @@ if filereadable(expand("~/.vimrc.bundles.local"))
 endif
 
 filetype on
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
