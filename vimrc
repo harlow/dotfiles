@@ -43,7 +43,6 @@ set showcmd       " display incomplete commands
 set splitbelow
 set splitright
 set tabstop=2
-set vb
 
 " Silver searcher
 if executable('ag')
