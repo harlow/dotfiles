@@ -17,7 +17,7 @@ prod() {
 }
 
 if [ -e "$HOME/.cbenv" ]; then
- source "$HOME/.cbenv"
+  source "$HOME/.cbenv"
 fi
 
 eval $(cb env $CB_ENV)

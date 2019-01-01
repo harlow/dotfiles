@@ -26,6 +26,8 @@ precmd () {
 }
 
 function cbenv {
+  source "$HOME/.cbenv"
+
   if [[ $CB_ENV == 'us-west-1.prod' ]]; then
       echo '🔺  ' && return
   fi
