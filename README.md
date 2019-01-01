@@ -29,3 +29,9 @@ Make sure `ctags` are set up correctly.
     $ brew install ctags
     $ alias ctags="`brew --prefix`/bin/ctags"
     $ ctags -R
+
+Keyboard Modifiers
+------------------
+
+https://pqrs.org/osx/karabiner/index.html
+https://pqrs.org/osx/karabiner/complex_modifications/#caps_lock
