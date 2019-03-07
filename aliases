@@ -1,8 +1,5 @@
 # Unix
 
-# Youtube DL
-alias dl="youtube-dl --add-metadata -o '/tmp/%(title)s.%(ext)s'; cp '/tmp/%(title)s.%(ext)s' '/Users/harlow/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized/%(title)s.%(ext)s'"
-
 # Folder shortcuts
 alias be='bundle exec'
 alias c='irb -r ./app.rb'
