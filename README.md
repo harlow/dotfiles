@@ -19,11 +19,6 @@ Manage the list of vim plugins in `vimrc.bundles`.
 
     :BundleInstall
 
-There is configuration for `zsh` so switch your shell from the default `bash`
-to `zsh` on OS X.
-
-    $ chsh -s /bin/zsh
-
 Make sure `ctags` are set up correctly.
 
     $ brew install ctags
