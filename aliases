@@ -3,14 +3,12 @@
 # Folder shortcuts
 alias be='bundle exec'
 alias c='irb -r ./app.rb'
-alias cbr='cd ~/code/clearbit'
+alias cbr='cd ~/Code/clearbit'
 alias cbg='cd ~/go/src/github.com/clearbit'
-alias hw='cd ~/code/personal'
-alias hwg='cd ~//go/src/github.com/harlow'
-alias ph='cd ~/code/clearbit/person'
-alias ch='cd ~/code/clearbit/company'
-alias wiki='cd ~/code/clearbit/apihub.wiki; git pull; subl .'
-alias apihub='cd ~/code/clearbit/apihub'
+alias hw='cd ~/Code/harlow'
+alias ph='cd ~/Code/clearbit/person'
+alias ch='cd ~/Code/clearbit/company'
+alias apihub='cd ~/Code/clearbit/apihub'
 
 # Terminal
 alias -g G='| grep'
