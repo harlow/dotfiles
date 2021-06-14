@@ -1,49 +1,49 @@
-# add to path
-export PATH="./bin:/usr/local/bin:$HOME/go/bin:$HOME/.bin:$PATH"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# init rbenv
+eval "$(rbenv init -)"
+
+PATH=./bin:$PATH
+PATH=~/.bin:$PATH
+PATH=~/go/bin:$PATH
+PATH=~$HOME/.cargo/bin:$PATH
 
 # don't cache the bin files
 set +h
+setopt prompt_subst
+
+# use vim as an editor
+export EDITOR=vim
+export BUNDLER_EDITOR=code
 
 # load custom env vars
 source "$HOME/.env.local"
-
-# load function files
-for file in ~/.zsh/functions/*; do
-  source $file
-done
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# set bell to silent
-set bell-style visible
+# branch name
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
-# load completion and func paths
-fpath=(~/.zsh/completion $fpath)
-autoload -U compinit
+# function precmd() {
+#    current_git_branch=`git rev-parse --abbrev-ref HEAD`
+#}
 
-# use vim as an editor
-export EDITOR=vim
-export BUNDLER_EDITOR=code
+PS1='%F{green}%2~%F{yellow}$(parse_git_branch) %F{grey}$%F{grey} '
 
-# vi mode
-# bindkey -v
-# bindkey "^F" vi-cmd-mode
+# kubes env helpers
+switch_env() {
+  eval "$(cb env "$1")" && echo $1 > ~/.clearbit-env
+}
 
-# use incremental search
-# bindkey "^R" history-incremental-search-backward
+dev()  { switch_env 'us-west-1.dev-2'     && echo "Switched to development"; }
+stag() { switch_env 'us-west-1.staging-2' && echo "Switched to staging"; }
+prod() { switch_env 'us-west-1.prod'      && echo "Swiched to production";}
 
-# ignore duplicate history entries
-setopt histignoredups
+alias robo="robo --config ~/code/clearbit/robofiles/robo.yml"
 
-# keep more history
-export HISTSIZE=200
-export SAVEHIST=200
-export HISTFILE=~/.history
-
-# load ctags user local
-ctags=/usr/local/bin/ctags
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
