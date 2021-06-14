@@ -8,8 +8,6 @@ zstyle ':vcs_info:*' stagedstr '%F{green}+'
 zstyle ':vcs_info:*' unstagedstr '%F{red}!'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
-### git: Show marker (T) if there are untracked files in repository
-# Make sure you have added staged to your 'formats':  %c
 function +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | fgrep '??' &> /dev/null ; then
@@ -25,18 +23,4 @@ precmd () {
   vcs_info
 }
 
-function cbenv {
-  source "$HOME/.cbenv"
-
-  if [[ $CB_ENV == 'us-west-1.prod' ]]; then
-      echo '🔺  ' && return
-  fi
-  if [[ $CB_ENV == 'us-west-1.staging-2' ]]; then
-      echo '🔸  ' && return
-  fi
-  if [[ $CB_ENV == 'us-west-1.dev-2' ]]; then
-      echo '🔹  ' && return
-  fi
-}
-
-PROMPT='$(cbenv)%F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '
+PROMPT='%F{grey}%2~${vcs_info_msg_0_} %F{grey}$%F{grey} '
