@@ -1,5 +1,13 @@
 # Unix
 
+tail() {
+  stern -n $1 $2 --exclude-container istio-proxy
+}
+
+refresh() {
+  cb env --reset `kubectl config current-context`
+}
+
 # Folder shortcuts
 alias be='bundle exec'
 alias c='irb -r ./app.rb'
